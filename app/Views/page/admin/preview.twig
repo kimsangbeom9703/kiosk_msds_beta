@@ -1,0 +1,36 @@
+<!--
+fhd 가로형 :
+            <div style="width:1152px; height:648px; margin:30px 0 0 10px; padding:0; overflow:hidden; border:2px solid #000000;">
+                <iframe src="/" width="1920" height="1080" class="zoom_2kl"></iframe>
+            </div>
+fhd 세로형 :
+            <div style=" width:432px; height:768px; margin:10px 0 50px 0;padding:0;overflow:hidden; border:2px solid #000000;">
+                <iframe src="/" width="1080" height="1920" class="zoom_2kp"></iframe>
+            </div>
+4k 가로형 :
+            <div style="width:1152px; height:648px; margin:30px 0 0 10px; padding:0; overflow:hidden; border:2px solid #000000;">
+                <iframe src="/" width="3840" height="2160" class="zoom_4kl"></iframe>
+            </div>
+4k 세로형 :
+            <div style=" width:432px; height:768px; margin:10px 0 50px 0;padding:0;overflow:hidden; border:2px solid #000000;">
+                <iframe src="/" width="2160" height="3840" class="zoom_4kp"></iframe>
+            </div>
+-->
+<div id="infoMessage">{{ message | raw }}</div>
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">미리보기</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div style=" width:432px; height:768px; margin:10px 0 50px 0;padding:0;overflow:hidden; border:2px solid #000000;">
+                <iframe src="/{{ device_data.device_code }}" width="2160" height="3840" class="zoom_4kp"></iframe>
+            </div>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->

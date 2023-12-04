@@ -1,0 +1,40 @@
+<div id="infoMessage">{{ message |raw }}</div>
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">
+                {{ mainData.title }} > {{ subData.title }} 등록
+            </h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip">
+                    <i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        {{ form_open('/'~ current_uri,'enctype="multipart/form-data"') }}
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="title" class="col-sm-1 col-form-label ">제목</label>
+                <div class="col-sm-11">
+                    <input type="text" name="title" value="" id="title" class="form-control" autocomplete="off"
+                           placeholder="컨텐츠명">
+                </div>
+            </div>
+            <code>{{ subData.type }} 형식만 가능합니다.</code>
+            <p class="small"></p>
+            <div class="form-group row">
+                <label for="title" class="col-sm-1 col-form-label ">선택</label>
+                <div class="col-sm-11">
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" name="contentsFile" id="contentsFile"
+                               accept="{{ subData.type }}">
+                        <label class="input-group-text" for="videoFile">Upload</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer clearfix">
+            <button class="btn btn-success btn-sm" type="submit">저장</button>
+        </div>
+        {{ form_close() }}
+    </div>
+</div>

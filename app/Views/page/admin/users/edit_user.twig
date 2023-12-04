@@ -1,0 +1,72 @@
+<div id="infoMessage">{{ message | raw }}</div>
+{{ form_open() }}
+<div class="card card-primary">
+    <div class="card-header">
+        <div class="card-title">
+            {{ lang('Auth.edit_user_heading') }}
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="form-group row">
+            <label for="title" class="col-sm-1 col-form-label ">이름</label>
+            <div class="col-sm-11">
+                {{ form_input(all_name) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label ">비밀번호</label>
+            <div class="col-sm-10">
+                {{ form_input(password) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label ">비밀번호 확인</label>
+            <div class="col-sm-10">
+                {{ form_input(passwordConfirm) }}
+            </div>
+        </div>
+        <hr/>
+        <div class="form-group row">
+            <label for="title" class="col-sm-1 col-form-label ">이메일</label>
+            <div class="col-sm-11">
+                {{ form_input(email) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="title" class="col-sm-1 col-form-label ">연락처</label>
+            <div class="col-sm-11">
+                {{ form_input(phone) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="title" class="col-sm-1 col-form-label ">회사명</label>
+            <div class="col-sm-11">
+                {{ form_input(company) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            {% if ionAuth.isSuperAdmin %}
+                <label for="title" class="col-sm-2 col-form-label ">{{ lang('Auth.edit_user_groups_heading') }}</label>
+                {% for group in groups %}
+                    <label class="checkbox">
+                    {% set gID = group.id %}
+                    {% set checked = NULL %}
+                    {% set item    = NULL %}
+                        {% for grp in currentGroups %}
+                            {% if gID == grp.id %}
+                                {% set checked = ' checked = "checked"' %}
+                            {% endif %}
+                        {% endfor %}
+                        <input type="checkbox" name="groups[]" value="{{ gID }}" {{ checked }}>
+                        {{ group.name }}
+                    </label>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="card-footer clearfix">
+        {{ form_submit('submit', lang('Auth.edit_user_submit_btn'),'class="btn btn-sm btn-info"') }}
+    </div>
+</div>
+{{ form_hidden('id',user.id) }}
+{{ form_close()}}

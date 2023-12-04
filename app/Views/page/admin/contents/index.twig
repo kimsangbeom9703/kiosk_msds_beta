@@ -1,0 +1,64 @@
+<div id="infoMessage">{{ message | raw }}</div>
+<div class="col-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <div class="card-title">
+                {{mainData.title}} > {{subData.title}}
+            </div>
+        </div>
+        <div class="card-body">
+            {% set arrayLength = data | length  %}
+            {% if arrayLength > 0 %}
+                <hr/>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>순서</th>
+                        <th>제목</th>
+                        <th>파일명</th>
+                        <th>상태</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in data %}
+                        <tr>
+                            <td>
+                                {% if row.used == 0 %}
+                                    {{ form_dropdown('sub_list_sort', drop_sort, row.sort, {'data-device_id': device_data.id, 'data-idx': row.id}) }}
+
+                                {% endif %}
+                            </td>
+                            <td>{{ row.title }}</td>
+                            <td>{{ row.org_file_name }}</td>
+                            <td>
+                                <div class="custom-control custom-switch">
+                                    <input data-device_id="{{ device_data.id }}" data-id="{{ row.id }}" type="checkbox" class="custom-control-input" id="switch_{{ row.id }}" {% if row.used==0 %} checked {% endif %}>
+                                    <label class="custom-control-label" for="switch_{{ row.id }}"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="btn btn-info btn-sm guide_edit list_left_button" href="/{{ current_uri }}/{{ row.id }}" data-idx="">
+                                    <i class="fa fa-edit"></i>수정
+                                </a>
+                                <a class="btn btn-success btn-sm guide_edit list_left_button" href="javascript:contents_popup('{{ row.file_type }}','{{ row.file_path }}')" data-idx="">
+                                    <i class="fa-solid fa-magnifying-glass"></i>미리보기
+                                </a>
+                                <a class="btn btn-danger btn-sm  list_left_button" href="javascript:content_delete('{{ row.id }}')">
+                                    <i class="fa fa-trash"></i>삭제
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+        <div class="card-footer clearfix">
+            <a href="/{{current_uri}}/create" class="btn btn-sm btn-success float-left">등록</a>
+            {% if arrayLength > 0 %}
+                {{ pager.links('admin','admin_full') | raw  }}
+            {% endif %}
+        </div>
+    </div>
+</div>

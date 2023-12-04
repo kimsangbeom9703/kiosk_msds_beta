@@ -1,0 +1,266 @@
+.sidebar-dark-orange .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-success
+.nav-sidebar>.nav-item>.nav-link.active {
+    background: #F8CB18;
+    color: #ffff;
+}
+
+.brand-link .brand-image {
+    float: left;
+    line-height: .8;
+    margin-left: 25%;
+    margin-right: 0.5rem;
+    margin-top: -8px;
+    width: auto;
+}
+
+.navbar-coustom {
+    background: #F8CB18;
+}
+
+.brand-link {
+    display: block;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    padding: 1.5rem .5rem;
+    transition: width .3s ease-in-out;
+    white-space: nowrap;
+    height: 70px;
+}
+.card-primary:not(.card-outline)>.card-header{
+    background: #F8CB18;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #f8f9fa;
+}
+.dropzone .dz-preview .dz-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.zoom_2kl {
+    -moz-transform: scale(0.6);
+    -moz-transform-origin: 0 0;
+    -webkit-transform: scale(0.6);
+    -webkit-transform-origin: 0 0;
+    -o-transform: scale(0.6);
+    -o-transform-origin: 0 0;
+    -ms-transform: scale(0.6);
+    -ms-transform-origin: 0 0;
+    transform: scale(0.6);
+    transform-origin: 0 0;
+    border:0;
+}
+
+.zoom_2kp  {
+    -moz-transform: scale(0.4);
+    -moz-transform-origin: 0 0;
+    -webkit-transform: scale(0.4);
+    -webkit-transform-origin: 0 0;
+    -o-transform: scale(0.4);
+    -o-transform-origin: 0 0;
+    -ms-transform: scale(0.4);
+    -ms-transform-origin: 0 0;
+    transform: scale(0.4);
+    transform-origin: 0 0;
+    border:0;
+}
+
+
+
+.zoom_4kl {
+    -moz-transform: scale(0.3);
+    -moz-transform-origin: 0 0;
+    -webkit-transform: scale(0.3);
+    -webkit-transform-origin: 0 0;
+    -o-transform: scale(0.3);
+    -o-transform-origin: 0 0;
+    -ms-transform: scale(0.3);
+    -ms-transform-origin: 0 0;
+    transform: scale(0.3);
+    transform-origin: 0 0;
+    border:0;
+}
+
+.zoom_4kp  {
+    -moz-transform: scale(0.2);
+    -moz-transform-origin: 0 0;
+    -webkit-transform: scale(0.2);
+    -webkit-transform-origin: 0 0;
+    -o-transform: scale(0.2);
+    -o-transform-origin: 0 0;
+    -ms-transform: scale(0.2);
+    -ms-transform-origin: 0 0;
+    transform: scale(0.2);
+    transform-origin: 0 0;
+    border:0;
+}
+
+
+.user-panel .image{
+    margin-top: 13px;
+}
+
+.pagination{
+    justify-content: center;
+}
+.new_img_fluid{
+    width: 100%;
+    height: 197px;
+    object-fit: contain;
+}
+
+.disable{
+    color: gray;
+    pointer-events: none;
+}
+
+.list-default {
+    /*width: 810px;*/
+    height: 470px;
+    margin: 0 auto;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+.list-phone {
+    /*width: 245px;*/
+    height: 468px;
+    padding-top: 60px;
+    background: url(/assets/images/bg_phone.gif) center no-repeat;
+    position: relative;
+}
+.list-phone p {
+    width: 205px;
+    height: 335px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.4em;
+    overflow-y: scroll;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: keep-all;
+    text-align: left;
+}
+
+:not(.layout-fixed) .main-sidebar{
+    overflow: hidden;
+}
+.form-control[type=file] {
+    overflow: hidden;
+}
+.form-control[type=file]:not(:disabled):not([readonly]) {
+    cursor: pointer;
+}
+.form-control::file-selector-button {
+    padding: 0.375rem 0.75rem;
+    margin: -0.375rem -0.75rem;
+    -webkit-margin-end: 0.75rem;
+    margin-inline-end: 0.75rem;
+    color: #212529;
+    background-color: #e9ecef;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: 1px;
+    border-radius: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+    .form-control::file-selector-button {
+        transition: none;
+    }
+}
+.form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+    background-color: #dde0e3;
+}
+.form-control::-webkit-file-upload-button {
+    padding: 0.375rem 0.75rem;
+    margin: -0.375rem -0.75rem;
+    -webkit-margin-end: 0.75rem;
+    margin-inline-end: 0.75rem;
+    color: #212529;
+    background-color: #e9ecef;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: 1px;
+    border-radius: 0;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+    .form-control::-webkit-file-upload-button {
+        -webkit-transition: none;
+        transition: none;
+    }
+}
+.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+    background-color: #dde0e3;
+}
+.form-control-sm::file-selector-button {
+    padding: 0.25rem 0.5rem;
+    margin: -0.25rem -0.5rem;
+    -webkit-margin-end: 0.5rem;
+    margin-inline-end: 0.5rem;
+}
+.form-control-sm::-webkit-file-upload-button {
+    padding: 0.25rem 0.5rem;
+    margin: -0.25rem -0.5rem;
+    -webkit-margin-end: 0.5rem;
+    margin-inline-end: 0.5rem;
+}
+.form-control-lg::file-selector-button {
+    padding: 0.5rem 1rem;
+    margin: -0.5rem -1rem;
+    -webkit-margin-end: 1rem;
+    margin-inline-end: 1rem;
+}
+.form-control-lg::-webkit-file-upload-button {
+    padding: 0.5rem 1rem;
+    margin: -0.5rem -1rem;
+    -webkit-margin-end: 1rem;
+    margin-inline-end: 1rem;
+}
+::file-selector-button {
+    font: inherit;
+}
+
+::-webkit-file-upload-button {
+    font: inherit;
+    -webkit-appearance: button;
+}
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.input-group-lg > .form-control,
+.input-group-lg > .form-select,
+.input-group-lg > .input-group-text,
+.input-group-lg > .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+}
+
+.input-group-sm > .form-control,
+.input-group-sm > .form-select,
+.input-group-sm > .input-group-text,
+.input-group-sm > .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+}

@@ -1,0 +1,1 @@
+2021-04-20 10:28:45: imagecreate(): Invalid image dimensions

@@ -1,0 +1,39 @@
+<div id="infoMessage">{{ message |raw }}</div>
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">
+                {{ mainData.title }} > {{ subData.title }} 등록
+            </h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip">
+                    <i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        {{ form_open('/'~ current_uri,'enctype="multipart/form-data"') }}
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="title" class="col-sm-1 col-form-label ">비상전화</label>
+                <div class="col-sm-11">
+                    <input type="text" name="call_number" value="{{ settingData.call_number }}" id="call_number" class="form-control" autocomplete="off"
+                           placeholder="1577-0000">
+                </div>
+            </div>
+            <code> - 포함하여 입력하세요.</code>
+            <p class="small"></p>
+            <div class="form-group row">
+                <label for="title" class="col-sm-1 col-form-label ">미리보기</label>
+                <div class="col-sm-11">
+                    <div id="preview_box" class="input-group mb-3">
+                        <img id="preview" width="400" height="400" style="max-width: 100%;"
+                             src="/uploads/qrcode/number.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer clearfix">
+            <button class="btn btn-info btn-sm" type="submit">수정</button>
+        </div>
+        {{ form_close() }}
+    </div>
+</div>

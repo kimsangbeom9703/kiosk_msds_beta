@@ -1,0 +1,70 @@
+<div id="infoMessage">{{ message |raw }}</div>
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">
+                {{ mainData.title }} > {{ subData.title }}수정
+            </h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip">
+                    <i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        {{ form_open('/'~ current_uri,'enctype="multipart/form-data"') }}
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="title" class="col-sm-1 col-form-label ">제목</label>
+                <div class="col-sm-11">
+                    <input type="text" name="title" value="{{ contentData.title }}" id="title" class="form-control"
+                           autocomplete="off" placeholder="이름">
+                </div>
+            </div>
+            <code>{{ subData.type }} 형식만 가능합니다.</code>
+            <p class="small"></p>
+            <div class="form-group row">
+                <label for="title" class="col-sm-1 col-form-label ">선택</label>
+                <div class="col-sm-11">
+                    <div class="input-group mb-3">
+                        <input type="file" class="custom-file-input " name="contentsFile" id="contentsFile"
+                               accept="{{ subData.type }}"
+                               value="">
+                        <label id="custom-file-label" class="input-group-text custom-file-label"
+                               for="contentsFile">{{ fileData.org_file_name }}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="title" class="col-sm-1 col-form-label ">미리보기</label>
+                <div class="col-sm-11">
+                    <div id="preview_box" class="input-group mb-3">
+                        {% if fileData.file_type == 'video/mp4' %}
+                            <video id="preview" width="1100" height="600" style="max-width: 100%;" controls autoplay>
+                                <source src="{{ fileData.file_path }}" type="{{ fileData.file_type }}">
+                            </video>
+                        {% elseif fileData.file_type == 'application/pdf' %}
+                            <div id="preview" class="pdf_container sub_con"></div>
+                        {% else %}
+                            <img id="preview" width="1100" height="600" style="max-width: 100%;"
+                                 src="{{ fileData.file_path }}">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer clearfix">
+            <button class="btn btn-success btn-sm" type="submit">저장</button>
+        </div>
+        {{ form_close() }}
+    </div>
+</div>
+<script>
+    let fileType = '{{ fileData.file_type }}';
+    let fileData = '{{ fileData.file_path }}';
+    window.addEventListener('DOMContentLoaded', function () {
+        if (fileType == 'application/pdf') {
+            setTimeout(function () {
+                doc_open('preview', `${fileData}`);
+            }, 0);
+        }
+    });
+</script>

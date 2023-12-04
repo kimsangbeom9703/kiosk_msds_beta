@@ -1,0 +1,26 @@
+<div id="infoMessage">{{ message | raw }}</div>
+{{ form_open('admin/users/deactivate/'~user.id) }}
+<div class="card card-primary">
+    <div class="card-header">
+        <div class="card-title">
+            {{ lang('Auth.deactivate_heading') }}
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="form-group row">
+            <label for="title"
+                   class="col-sm-12 col-form-label ">{{ sprintf(lang('Auth.deactivate_subheading'), user.username) }}</label>
+        </div>
+        <div class="form-group row">
+            {{ form_label(lang('Auth.deactivate_confirm_y_label'), 'confirm') }}
+            <input type="radio" name="confirm" value="yes" checked="checked">
+            {{ form_label(lang('Auth.deactivate_confirm_n_label'), 'confirm') }}
+            <input type="radio" name="confirm" value="no">
+        </div>
+        {{ form_hidden('id',user.id) }}
+    </div>
+    <div class="card-footer clearfix">
+        {{ form_submit('submit', lang('Auth.deactivate_submit_btn'),'class="btn btn-sm btn-success"') }}
+    </div>
+</div>
+{{ form_close()}}

@@ -1,0 +1,118 @@
+<div id="infoMessage">{{ message |raw }}</div>
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">
+                {{ mainData.title }} > {{ subData.title }} 등록
+            </h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip">
+                    <i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        {{ form_open('/'~ current_uri,'enctype="multipart/form-data"') }}
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="title" class="col-sm-1 col-form-label ">제목</label>
+                <div class="col-sm-11">
+                    <input type="text" name="title" value="" id="title" class="form-control" autocomplete="off"
+                           placeholder="제목">
+                </div>
+            </div>
+            <p class="small"></p>
+            <div class="form-group row">
+                <label for="title" class="col-sm-1 col-form-label ">내용</label>
+                <div class="col-sm-11">
+                    <div class="input-group mb-3">
+                        <textarea id="desc" type="textarea" name="desc" class="form-control" autocomplete="off"
+                                  placeholder="내용"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer clearfix">
+            <button class="btn btn-success btn-sm" type="submit">저장</button>
+        </div>
+        {{ form_close() }}
+    </div>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        $('#desc').summernote({
+            minHeight: 500,             // 최소 높이
+            maxHeight: null,             // 최대 높이
+            focus    : false,                 // 에디터 로딩후 포커스를 맞출지 여부
+            lang     : "ko-KR",				 // 한글 설정
+            fontSizes: ['12', '16', '18', '24', '28', '30', '32', '34', '36'], //here set the font size options you want
+            callbacks: {	//여기 부분이 이미지를 첨부하는 부분
+                onImageUpload: function (files) {
+                    console.log(files)
+                    for (var i = 0; i < files.length; i++) {
+                        if (i > 9) {
+                            Swal.fire({
+                                icon             : 'error',
+                                title            : '파일은 10개 까지만 가능합니다.',
+                                showConfirmButton: false,
+                                timer            : 1000,
+                                onClose          : () => {
+                                    location.reload();
+                                }
+                            })
+                            return;
+                        }
+                    }
+                    RealTimeImageUpdate(files, this);
+                },
+            }
+        });
+    });
+
+    function RealTimeImageUpdate(files, editor) {
+        var formData = new FormData();
+        var fileArr = Array.prototype.slice.call(files);
+
+        for (var xx = 0; xx < files.length; xx++) {
+            formData.append("file[]", files[xx]);
+        }
+        console.log(formData);
+        $.ajax({
+            url        : "/admin/api/edit_image_upload",
+            data       : formData,
+            cache      : false,
+            contentType: false,
+            processData: false,
+            enctype    : 'multipart/form-data',
+            type       : 'POST',
+            success    : function (result) {
+                console.log(result);
+                if (result['status'] == 'success') {
+                    let data = result['data'];
+                    $(editor).summernote('pasteHTML', "<img src='" + data + "'  />");
+
+
+                } else {
+                    Swal.fire({
+                        icon             : 'error',
+                        title            : '실패했습니다.',
+                        showConfirmButton: false,
+                        timer            : 1000,
+                        onClose          : () => {
+                            location.reload();
+                        }
+                    })
+                }
+                // //항상 업로드된 파일의 url이 있어야 한다.
+                // if(result === -1){
+                //     alert('이미지 파일이 아닙니다.');
+                //     return;
+                // }
+                // var data = JSON.parse(result);
+                // for(x=0;x<data.length;x++){
+                //     var img = $("<img>").attr({src: data[x], width: "100%"});   // Default 100% ( 서비스가 앱이어서 이미지 크기를 100% 설정 - But 수정 가능 )
+                //     console.log(img);
+                //     $(editor).summernote('pasteHTML', "<img src='"+data[x]+"' style='width:100%;' />");
+                // }
+            }
+        });
+    }
+</script>

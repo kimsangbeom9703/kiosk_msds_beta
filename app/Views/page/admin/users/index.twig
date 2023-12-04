@@ -1,0 +1,55 @@
+<div id="infoMessage">{{ message | raw }}</div>
+<div class="col-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <div class="card-title">
+                {{ lang('Auth.index_subheading') }}
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-hover dataTable">
+                <tr>
+                    <th>{{ lang('Auth.index_name_th') }}</th>
+                    <th>{{ lang('Auth.index_username_th') }}</th>
+                    <th>{{ lang('Auth.index_email_th') }}</th>
+                    {% if ionAuth.isSuperAdmin %}
+                        <th>{{ lang('Auth.index_groups_th') }}</th>
+                        <th>{{ lang('Auth.index_status_th') }}</th>
+                    {% endif %}
+                    <th>{{ lang('Auth.index_action_th') }}</th>
+                </tr>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.all_name }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        {% if ionAuth.isSuperAdmin %}
+                            <td>
+                                {% for group in user.groups %}
+                                    {{ anchor('admin/users/edit_group/'~group.id,group.name) }} <br/>
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% if user.active %}
+                                    {{ anchor('admin/users/deactivate/' ~ user.id, lang('Auth.index_active_link')) }}
+                                {% else %}
+                                    {{ anchor('admin/users/activate/' ~ user.id, lang('Auth.index_inactive_link')) }}
+                                {% endif %}
+                            </td>
+                        {% endif %}
+                        <td>
+                            {{ anchor('admin/users/edit/' ~ user.id, '수정') }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% if ionAuth.isSuperAdmin %}
+            <div class="card-footer clearfix">
+                <a href="/admin/users/create" class="btn btn-sm btn-success ">사용자 등록</a>
+                <a href="/admin/users/create_group" class="btn btn-sm btn-info ">그룹 등록</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
