@@ -11,7 +11,7 @@ let m_main_conf = {
 
 let m_img_list = [
     {
-        url: '/main/images/test/33292_22295_3611.jpg',
+        url: '/main/images/test/01.png',
     },
 ];
 

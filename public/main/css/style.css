@@ -885,56 +885,137 @@ a {
     clear: both;
 }
 
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+
 /* **************************************** *
  * BUTTON
  * **************************************** */
 .main-btn-wrap {
     width: 100%;
 }
-
 .main-btn-wrap .main--btn {
-    width: 1150px;
-    height: 195px;
+    width: 1500px;
+    height: 300px;
+    font-size: 30px;
+    text-align: center;
+    background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+    background-size: 600%;
+    -webkit-animation: anime 16s linear infinite;
+    animation: anime 16s linear infinite;
+    border-radius: 165px;
+    margin: 100px auto 86px;
+    border: 20px solid rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
-    border-radius: 100px;
-    border: 7px solid #8ae1fd;
-    margin: 90px auto 160px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding-left: 100px;
     position: relative;
-    cursor: pointer;
-}
-
-.main-btn-wrap .main--btn::after {
-    position: absolute;
-    content: '';
-    right: -1px;
-    top: 0;
-    width: 183px;
-    height: 183px;
-    border-radius: 50%;
-    background-color: #8ae1fd;
-}
-
-.main-btn-wrap .main--btn::before {
-    content: '';
-    background-image: url(/main/images/common/arrow_forward.svg);
-    background-repeat: no-repeat;
-    width: 183px;
-    height: 183px;
-    top: 0;
-    right: 0;
-    position: absolute;
-    z-index: 1;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 1px rgba(255, 255, 255, 0.15), 0 25px 0 #000,
+        0 8px 3px rgba(0, 0, 0, 0.2);
 }
 
 .main-btn-wrap .main--btn a {
+    font-size: 100px;
     color: #fff;
-    font-size: 70px;
     font-weight: 700;
     display: block;
 }
+.main-btn-wrap .btn2 {
+    position: absolute;
+    margin-top: -70px;
+    z-index: -1;
+    filter: blur(30px);
+    opacity: 0.8;
+}
+.main-btn-wrap .main--btn .material-icons {
+    color: #fff;
+    font-size: 110px;
+    margin-left: 30px;
+}
+@-webkit-keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes anime {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* 
+.main-btn-wrap .main--btn {
+  width: 1980px;
+  height: 330px;
+  box-sizing: border-box;
+  border-radius: 165px;
+  background-color: #47d5b5;
+  background-image: linear-gradient(81deg, #47d5b5 0%, #ffe631 74%);
+  margin: 90px auto 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.main-btn-wrap .main--btn::after {
+  content: '';
+  width: 1915px;
+	height: 260px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 165px;
+	background-color: #fff;
+
+}
+
+.main-btn-wrap .main--btn::before {
+  content: '';
+  background-image: url(/images/common/arrow_forward.svg);
+  background-repeat: no-repeat;
+  width: 183px;
+  height: 183px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.main-btn-wrap .main--btn a {
+  color: #000;
+  font-size: 100px;
+  font-weight: 700;
+  display: block;
+}
+ */
 
 /* ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== */
 
@@ -994,7 +1075,6 @@ header .logo {
 
 /*  메인 버튼 */
 .main-gnb {
-    margin-top: 155px;
     padding: 0 83px;
     display: flex;
     justify-content: space-between;
@@ -1035,7 +1115,7 @@ header .logo {
     height: 500px;
     border-radius: 240px;
     background-color: rgba(0, 0, 0, 0.3);
-    margin: 120px auto 0;
+    margin: 80px auto 0;
     padding: 95px;
     box-sizing: border-box;
     display: flex;
@@ -1226,7 +1306,7 @@ header .logo {
 /* sub */
 .sub-content {
     width: 100%;
-    height: 2972px;
+    height: 2970px;
     background-color: #ebf0f2;
     position: relative;
     border-radius: 0 0 100px 100px;
@@ -1639,8 +1719,8 @@ header .logo {
     position: relative;
 }
 
-.search input[type='text'] {
-    width: 92%;
+.search input[type='search'] {
+    width: 100%;
     height: 200px;
     line-height: 200px;
     padding: 0 50px 0 100px;
@@ -1650,7 +1730,7 @@ header .logo {
     font-size: 60px;
 }
 
-.search input[type='text']:focus {
+.search input[type='search']:focus {
     outline: none;
     border-color: #666;
 }
@@ -1873,6 +1953,7 @@ header .logo {
     box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.3);
     padding: 170px 130px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .situation li {
@@ -2015,11 +2096,15 @@ header .logo {
 
 /* 뷰페이지 */
 .cont_view {
-    width: 1970px;
-    height: 2300px;
-    background: #12194b;
+    width: 1700px;
+    height: 2180px;
+    background: linear-gradient(to bottom, #44474f 0%, #1e2126 100%);
+    margin: 0 auto;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.3);
+    padding: 100px;
+    box-sizing: border-box;
     position: relative;
-    padding: 10px 0;
 }
 .cont_view .writing {
     width: 100%;
@@ -2036,27 +2121,71 @@ header .logo {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: -110px;
+    left: -210px;
     z-index: 1;
 }
 .cont_view .btn_next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: -110px;
+    right: -210px;
     z-index: 1;
 }
 /* 피난 안내도 - 비상전화  */
 .cont_layout {
     width: 1700px;
     height: 2180px;
-    background: #12194b;
-    margin: 200px 0 0 135px;
-    padding: 10px 0;
+    background: linear-gradient(to bottom, #44474f 0%, #1e2126 100%);
+    margin: 250px auto 0;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.3);
+    padding: 100px;
+    box-sizing: border-box;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .cont_layout img {
     height: 100%;
+}
+
+/*  동영상보기  */
+.video_wrap {
+    position: absolute;
+    width: 2079px;
+    height: 1380px;
+    background: url(/main/images/common/bg_Video.png) no-repeat;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px 75.5px 30px;
+    box-sizing: border-box;
+}
+.video_wrap .video_box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.video_box .tit {
+    width: 1600px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    font-size: 70px;
+    font-weight: 500;
+    padding: 0 50px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+.video_box .video_view {
+    width: 1920px;
+    height: 1080px;
+    background: #ff0;
+    border: 2px solid #000;
+}
+.video_box .btn_close {
+    position: absolute;
+    top: -200px;
+    right: 0;
 }

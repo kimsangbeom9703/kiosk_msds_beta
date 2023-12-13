@@ -167,6 +167,14 @@ function setInit() {
         onClickPopup(this);
     });
 
+    $('.btn_close').mousedown(function () {
+        onClickPopup(this);
+    });
+
+    $('.video_wrap').mousedown(function () {
+        onClickNull();
+    });
+
     $('.gnb-btn-1').mousedown(function () {
         onClickMainMenu_1(this);
     });
@@ -249,8 +257,9 @@ function setInit() {
     // Swiper 초기화
     m_pdf_swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto', // 한 번에 보여질 슬라이드 개수
-        spaceBetween: 300,
-        slideWidth: 2160,
+        spaceBetween: 200,
+        centeredSlides: true,
+        // slideWidth: 2160,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -263,6 +272,10 @@ function setInit() {
             init: function () {},
         },
     });
+}
+
+function onClickNull() {
+    //console.log('null');
 }
 function onClickPopup() {
     if ($('#id_pop_pdf').is(':visible') == true) {
@@ -328,7 +341,18 @@ function onClickBtnBack(_obj) {
     } else if (m_main_conf.curr_page == 2) {
         document['frame_no_accident'].setBtnBack();
     } else if (m_main_conf.curr_page == 3) {
-        onClickPopup();
+        if ($('#id_pop_pdf').is(':visible') == true) {
+            onPdfClose();
+            return;
+        }
+        if ($('#id_pop_video').is(':visible') == true) {
+            onVideoClose();
+            return;
+        }
+        if ($('#id_pop_img').is(':visible') == true) {
+            onImgClose();
+            return;
+        }
         document['frame_safety_pop'].setBtnBack();
     }
 }
@@ -394,36 +418,36 @@ function setWeather(_json) {
     let today = new Date();
     let rour = today.getHours();
 
-    let t_url = 'images/weather/DB01_B.svg';
+    let t_url = '/main/images/weather/DB01_B.svg';
     if (_json.sky == '1') {
         //맑음
         if (parseInt(rour) > 18 || parseInt(rour) < 6) {
-            t_url = 'images/weather/DB01_N_B.svg';
+            t_url = '/main/images/weather/DB01_N_B.svg';
         } else {
-            t_url = 'images/weather/DB01_B.svg';
+            t_url = '/main/images/weather/DB01_B.svg';
         }
     } else if (_json.sky == '2') {
         //구름많음
         if (parseInt(rour) > 18 || parseInt(rour) < 6) {
-            t_url = 'images/weather/DB03_N_B.svg';
+            t_url = '/main/images/weather/DB03_N_B.svg';
         } else {
-            t_url = 'images/weather/DB03_B.svg';
+            t_url = '/main/images/weather/DB03_B.svg';
         }
     } else if (_json.sky == '3') {
         //흐림
-        t_url = 'images/weather/DB04_B.svg';
+        t_url = '/main/images/weather/DB04_B.svg';
     } else if (_json.sky == '4') {
         //비
-        t_url = 'images/weather/DB05_B.svg';
+        t_url = '/main/images/weather/DB05_B.svg';
     } else if (_json.sky == '4') {
         //비/눈
-        t_url = 'images/weather/DB06_N_B.svg';
+        t_url = '/main/images/weather/DB06_N_B.svg';
     } else if (_json.sky == '4') {
         //눈
-        t_url = 'images/weather/DB08_B.svg';
+        t_url = '/main/images/weather/DB08_B.svg';
     } else if (_json.sky == '4') {
         //소나기
-        t_url = 'images/weather/DB07_B.svg';
+        t_url = '/main/images/weather/DB07_B.svg';
     }
 
     $('#id_weather_img').attr('src', t_url);
@@ -848,13 +872,14 @@ function onClickItem(_obj) {
         $('#id_pop_img').fadeIn();
     } else if (_obj.type == 'mov') {
         m_vod_url = _obj.fileUrl;
-        setLoadVideo(m_vod_url);
+        setLoadVideo(m_vod_url, _obj.title);
         $('#id_pop_video').fadeIn();
     }
 }
 
 let m_vod_url = '';
-function setLoadVideo(_url) {
+function setLoadVideo(_url, _title) {
+    $('#id_video_tit').html(_title);
     $('#id_pop_video_area > video').attr('src', _url);
     $('#id_pop_video_area').children('video')[0].play();
 }
@@ -975,7 +1000,6 @@ function onMouseMoveList(evt) {
 }
 
 function setLoadPdf(_url) {
-    console.log(_url)
     pageNum = 0;
     m_curr_x = 0;
     m_page_width = 2160;
@@ -990,7 +1014,7 @@ function setLoadPdf(_url) {
 
     let loadingTask = pdfjsLib.getDocument({
         url: url,
-        cMapUrl: 'main/js/lib/cmaps/',
+        cMapUrl: '/main/js/lib/cmaps/',
         //cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/cmaps/',
         enableXfa: true,
         disableFontFace: false,
@@ -1021,8 +1045,8 @@ function setLoadPdf(_url) {
 function renderPage(num) {
     var canvas = document.getElementById('id_canvas_' + num);
     var container = document.getElementById('id_pdf_container');
-    var t_view_width = 1530;
-    var t_view_height = 2150;
+    var t_view_width = 1400;
+    var t_view_height = 1980;
     var context = canvas.getContext('2d');
     pdfDoc
         .getPage(num)
@@ -1031,22 +1055,18 @@ function renderPage(num) {
                 scale: 1,
             });
             var t_scale = t_view_width / viewport.width;
-            viewport = page.getViewport({
-                scale: t_scale,
-            });
-            canvas.width = t_view_width;
-            canvas.height = viewport.height;
             if (canvas.height > t_view_height) {
                 t_scale = t_scale * (t_view_height / canvas.height);
             }
             viewport = page.getViewport({
                 scale: t_scale,
             });
+            // console.log(t_scale);
             canvas.width = viewport.width;
             canvas.height = viewport.height;
-            $('.pdf_area').css('width', canvas.width);
-            canvas.style.top = (t_view_height - canvas.height) / 2 + 145 + 'px';
-            canvas.style.left = (t_view_width - canvas.width) / 2 + 100 + 'px';
+            canvas.style.top = (t_view_height - canvas.height) / 2 + 20 + 'px';
+            canvas.style.left = (t_view_width - canvas.width) / 2 + 10 + 'px';
+            canvas.style.width = t_view_width + 'px';
 
             var renderContext = {
                 canvasContext: context,
