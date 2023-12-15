@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/msds-manager-beta/app/Controllers/Admin'
+let g:netrw_dirhist_4='/home/msds-manager-beta/app/Controllers'
+let g:netrw_dirhist_3='/home/msds-manager-beta/app'
+let g:netrw_dirhist_2='/home/msds-manager-beta/app/Database'
+let g:netrw_dirhist_1='/home/msds-manager-beta/app'

@@ -1,14 +1,14 @@
 let m_main_conf = {
-    lang: 'KOR',
-    name: 'index',
-    curr_cnt: -1,
-    curr_page: '-1',
-    curr_screen: 1,
-    screen_ptime: 0,
-    screen_last: 0,
-    style_cnt: 0,
-    time_last: 0,
-    curr_notice: 1,
+    lang            : 'KOR',
+    name            : 'index',
+    curr_cnt        : -1,
+    curr_page       : '-1',
+    curr_screen     : 1,
+    screen_ptime    : 0,
+    screen_last     : 0,
+    style_cnt       : 0,
+    time_last       : 0,
+    curr_notice     : 1,
     curr_notice_type: '',
 };
 let m_lang_click = 0;
@@ -17,28 +17,28 @@ let setTimeoutID = null;
 let m_proxy_url = ''; //'https://cors.bridged.cc/';
 let m_pdf_swiper;
 let m_pdf_container_height = 0;
-let m_notice_list = [
-    {
-        type: 'IMG',
-        url: '/main/commonfiles/img00.jpg',
-        p_time: '10',
-    },
-    {
-        type: 'MOV',
-        url: '/main/commonfiles/mov01.mp4',
-        p_time: '30',
-    },
-    {
-        type: 'IMG',
-        url: '/main/commonfiles/img01.jpg',
-        p_time: '10',
-    },
-    {
-        type: 'IMG',
-        url: '/main/commonfiles/img02.jpg',
-        p_time: '10',
-    },
-];
+// let m_notice_list = [
+//     {
+//         type: 'IMG',
+//         url: '/main/commonfiles/img00.jpg',
+//         p_time: '10',
+//     },
+//     {
+//         type: 'MOV',
+//         url: '/main/commonfiles/mov01.mp4',
+//         p_time: '30',
+//     },
+//     {
+//         type: 'IMG',
+//         url: '/main/commonfiles/img01.jpg',
+//         p_time: '10',
+//     },
+//     {
+//         type: 'IMG',
+//         url: '/main/commonfiles/img02.jpg',
+//         p_time: '10',
+//     },
+// ];
 
 let m_ticker_list = [
     {
@@ -60,49 +60,49 @@ let m_ticker_list = [
 
 let m_weather_json = {
     data: {
-        sky: '3',
-        temp: '12.5',
-        tempMax: '15.7',
-        tempMin: '4.6',
+        sky     : '3',
+        temp    : '12.5',
+        tempMax : '15.7',
+        tempMin : '4.6',
         humidity: '34',
     },
 };
 
 let m_dust_json = {
-    status: 'success',
+    status    : 'success',
     statusCode: 200,
-    data: {
-        left_data: {
+    data      : {
+        left_data : {
             dustStationName: 'T2',
-            fcstRealDate: '2023-11-16 08:00:00',
-            fcstDate: '2023-11-16',
-            fcstTime: '08:00:00',
-            callDate: '2023-11-16T10:00:58',
-            locationId: 'T2',
-            type: 'IN',
-            co: '0.5',
-            co2: '521',
-            no2: '0.031',
-            o3: null,
-            so2: null,
-            pm10: '27.9',
-            pm2_5: '15.6',
+            fcstRealDate   : '2023-11-16 08:00:00',
+            fcstDate       : '2023-11-16',
+            fcstTime       : '08:00:00',
+            callDate       : '2023-11-16T10:00:58',
+            locationId     : 'T2',
+            type           : 'IN',
+            co             : '0.5',
+            co2            : '521',
+            no2            : '0.031',
+            o3             : null,
+            so2            : null,
+            pm10           : '27.9',
+            pm2_5          : '15.6',
         },
         right_data: {
             dustStationName: '자유무역지역',
-            fcstRealDate: '2023-11-16 07:00:00',
-            fcstDate: '2023-11-16',
-            fcstTime: '07:00:00',
-            callDate: '2023-11-16T09:01:19',
-            locationId: '자유무역지역',
-            type: 'OUT',
-            co: '1.0',
-            co2: null,
-            no2: '0.0240',
-            o3: '0.0221',
-            so2: '0.0041',
-            pm10: '38',
-            pm2_5: '22',
+            fcstRealDate   : '2023-11-16 07:00:00',
+            fcstDate       : '2023-11-16',
+            fcstTime       : '07:00:00',
+            callDate       : '2023-11-16T09:01:19',
+            locationId     : '자유무역지역',
+            type           : 'OUT',
+            co             : '1.0',
+            co2            : null,
+            no2            : '0.0240',
+            o3             : '0.0221',
+            so2            : '0.0041',
+            pm10           : '38',
+            pm2_5          : '22',
         },
     },
 };
@@ -209,7 +209,7 @@ function setInit() {
         m_main_conf.time_last = new Date().getTime();
         //console.log("BODY FRAME TOUCH");
     });
-    setDustApi();
+    // setDustApi();
     setWeatherApi();
     setTickerListUp();
 
@@ -256,20 +256,21 @@ function setInit() {
     */
     // Swiper 초기화
     m_pdf_swiper = new Swiper('.swiper-container', {
-        slidesPerView: 'auto', // 한 번에 보여질 슬라이드 개수
-        spaceBetween: 200,
+        slidesPerView : 'auto', // 한 번에 보여질 슬라이드 개수
+        spaceBetween  : 200,
         centeredSlides: true,
         // slideWidth: 2160,
         pagination: {
-            el: '.swiper-pagination',
+            el       : '.swiper-pagination',
             clickable: true,
         },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        on: {
-            init: function () {},
+        on        : {
+            init: function () {
+            },
         },
     });
 }
@@ -277,6 +278,7 @@ function setInit() {
 function onClickNull() {
     //console.log('null');
 }
+
 function onClickPopup() {
     if ($('#id_pop_pdf').is(':visible') == true) {
         onPdfClose();
@@ -295,9 +297,11 @@ function onClickPopup() {
 function onImgClose() {
     $('#id_pop_img').fadeOut();
 }
+
 function onPdfClose() {
     $('#id_pop_pdf').fadeOut();
 }
+
 function onVideoClose() {
     $('#id_pop_video').fadeOut();
     $('#id_pop_video_area').children('video')[0].pause();
@@ -387,6 +391,8 @@ function setMainReset() {
 }
 
 function setWeatherApi() {
+    setWeather(m_weather_json.data);
+    return;
     let today = new Date();
     let year = today.getFullYear(); // 년도
     let month = today.getMonth() + 1; // 월
@@ -397,17 +403,17 @@ function setWeatherApi() {
     var t_url = 'http://100';
 
     $.ajax({
-        url: t_url,
-        type: 'GET',
-        dataType: 'json',
+        url       : t_url,
+        type      : 'GET',
+        dataType  : 'json',
         beforeSend: function (xhr) {
             xhr.setRequestHeader('', '');
         },
-        success: function (data) {
+        success   : function (data) {
             console.log(data);
             setWeather(data);
         },
-        error: function (xhr, status, error) {
+        error     : function (xhr, status, error) {
             setWeather(m_weather_json.data);
             console.error('에러 발생:', status, error);
         },
@@ -460,22 +466,22 @@ function setWeather(_json) {
 function setDustApi() {
     var requestData = {
         serviceTypeId: 2,
-        serviceType: 'INCHEON',
+        serviceType  : 'INCHEON',
     };
 
     $.ajax({
-        url: 'https://weather.sysmate.net/api/incheon-airport?left_station_id=2&right_station_id=4',
-        type: 'GET',
-        dataType: 'json',
+        url       : 'https://weather.sysmate.net/api/incheon-airport?left_station_id=2&right_station_id=4',
+        type      : 'GET',
+        dataType  : 'json',
         beforeSend: function (xhr) {
             xhr.setRequestHeader('API-KEY', 'f7f4c68e-e739-42d5-8a70-75c30df7d427');
             xhr.setRequestHeader('accept', 'application/json');
         },
-        success: function (data) {
+        success   : function (data) {
             //console.log(data);
             setDust(data);
         },
-        error: function (xhr, status, error) {
+        error     : function (xhr, status, error) {
             setDust(m_dust_json);
             console.error('에러 발생:', status, error);
         },
@@ -529,17 +535,17 @@ function setTickerListUp() {
     $('#id_ticker_box_ul').html(str_html);
     if ($('#id_ticker_box').find('li').length > 2) {
         $('#id_ticker_box').easyTicker({
-            direction: 'up',
-            easing: 'swing',
-            speed: 'slow',
-            interval: 1000,
-            height: '120px',
-            visible: 0,
+            direction : 'up',
+            easing    : 'swing',
+            speed     : 'slow',
+            interval  : 1000,
+            height    : '120px',
+            visible   : 0,
             mousePause: 1,
-            controls: {
-                up: '',
-                down: '',
-                toggle: '',
+            controls  : {
+                up      : '',
+                down    : '',
+                toggle  : '',
                 playText: 'Play',
                 stopText: 'Stop',
             },
@@ -548,7 +554,7 @@ function setTickerListUp() {
                 before: function (ul, li) {
                     // do something
                 },
-                after: function (ul, li) {
+                after : function (ul, li) {
                     // do something
                 },
             },
@@ -685,10 +691,12 @@ function setShowFrame(_str) {
 
     try {
         $('#id_notice_box_01').children('video')[0].pause();
-    } catch (err) {}
+    } catch (err) {
+    }
     try {
         $('#id_notice_box_02').children('video')[0].pause();
-    } catch (err) {}
+    } catch (err) {
+    }
     clearTimeout(setTimeoutID);
 
     $('#id_pop_lang_main').hide();
@@ -703,26 +711,27 @@ function setShowBtnBack() {
     }
     $('#id_btn_back').show();
     gsap.to('#id_btn_back', {
-        x: 0,
-        startAt: {
+        x        : 0,
+        startAt  : {
             x: 200,
         },
-        ease: Expo.out,
+        ease     : Expo.out,
         autoAlpha: 1,
-        duration: 0.25,
+        duration : 0.25,
     });
 }
 
 function setHideBtnBack() {
     gsap.to('#id_btn_back', {
-        x: 200,
-        ease: Expo.out,
+        x        : 200,
+        ease     : Expo.out,
         autoAlpha: 0,
-        duration: 0.25,
+        duration : 0.25,
     });
 }
 
-function onGoToHome() {}
+function onGoToHome() {
+}
 
 function setScreenAuto() {
     //    console.log("setScreenAuto");
@@ -741,7 +750,7 @@ function setNoticeDrawInfo() {
     if (m_main_conf.curr_cnt >= m_notice_list.length) m_main_conf.curr_cnt = 0;
 
     var obj = m_notice_list[m_main_conf.curr_cnt];
-
+    // console.log(obj)
     if (m_main_conf.curr_notice == 1) {
         m_main_conf.curr_notice = 2;
 
@@ -762,15 +771,15 @@ function setNoticeDrawInfo() {
 
     m_main_conf.curr_notice_type = obj.type;
 
-    if (obj.type == 'IMG') {
-        $('#' + str_show + ' > img').attr('src', obj.url);
+    if (obj.file_ext !== 'mp4') {
+        $('#' + str_show + ' > img').attr('src', obj.file_path);
         $('#' + str_show + ' > video').hide();
         $('#' + str_show)
             .children('video')[0]
             .pause();
         $('#' + str_show + ' > img').show();
     } else {
-        $('#' + str_show + ' > video').attr('src', obj.url);
+        $('#' + str_show + ' > video').attr('src', obj.file_path);
         $('#' + str_show + ' > video').show();
         $('#' + str_show + ' > img').hide();
         $('#' + str_show)
@@ -778,7 +787,7 @@ function setNoticeDrawInfo() {
             .play();
     }
 
-    m_main_conf.notice_ptime = obj.p_time;
+    m_main_conf.notice_ptime = obj.file_duration;
     if (m_main_conf.notice_ptime < 5) m_main_conf.notice_ptime = 5;
 
     m_main_conf.notice_ptime = m_main_conf.notice_ptime * 1000;
@@ -862,6 +871,7 @@ function setDateTime() {
 }
 
 function onClickItem(_obj) {
+    console.log(_obj)
     if (_obj.type == 'pdf') {
         m_pdf_url = _obj.fileUrl;
         setLoadPdf(m_pdf_url);
@@ -874,15 +884,21 @@ function onClickItem(_obj) {
         m_vod_url = _obj.fileUrl;
         setLoadVideo(m_vod_url, _obj.title);
         $('#id_pop_video').fadeIn();
+    } else if (_obj.file_type == "application/pdf") {
+        m_pdf_url = _obj.file_path;
+        setLoadPdf(m_pdf_url);
+        $('#id_pop_pdf').fadeIn();
     }
 }
 
 let m_vod_url = '';
+
 function setLoadVideo(_url, _title) {
     $('#id_video_tit').html(_title);
     $('#id_pop_video_area > video').attr('src', _url);
     $('#id_pop_video_area').children('video')[0].play();
 }
+
 function setLoadImg(_url) {
     $('#id_pop_img_area > img').attr('src', _url);
     /*
@@ -901,6 +917,7 @@ function setLoadImg(_url) {
     container.append(t_html);
     */
 }
+
 //////////////////////
 //----pdf viewer----//
 //////////////////////
@@ -916,11 +933,11 @@ var pdfDoc = null,
 
 var m_move_conf = {
     drag_status: 0, // 드래그 여부 0 : 선택안함, 1: 선택함
-    parent_x: 0,
-    parent_w: 0,
-    start_left: 0, // 드래그 스타트 X
-    end_left: 0,
-    orig_left: 0, // 드래그 원래위치 X
+    parent_x   : 0,
+    parent_w   : 0,
+    start_left : 0, // 드래그 스타트 X
+    end_left   : 0,
+    orig_left  : 0, // 드래그 원래위치 X
 };
 
 let m_curr_x = 0;
@@ -1013,10 +1030,10 @@ function setLoadPdf(_url) {
     pdfjsLib.GlobalWorkerOptions.workerSrc = '/main/js/lib/pdf.worker.js';
 
     let loadingTask = pdfjsLib.getDocument({
-        url: url,
+        url    : url,
         cMapUrl: '/main/js/lib/cmaps/',
         //cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/cmaps/',
-        enableXfa: true,
+        enableXfa      : true,
         disableFontFace: false,
     });
 
@@ -1070,7 +1087,7 @@ function renderPage(num) {
 
             var renderContext = {
                 canvasContext: context,
-                viewport: viewport,
+                viewport     : viewport,
             };
             page.render(renderContext);
         })
@@ -1099,9 +1116,9 @@ function onNextPage() {
 function getPosTransform(p_obj) {
     var i = 0;
     var ret_obj = {
-        left: 0,
-        top: 0,
-        scale: 1,
+        left  : 0,
+        top   : 0,
+        scale : 1,
         rotate: 0,
     };
     var str_tmp = '';

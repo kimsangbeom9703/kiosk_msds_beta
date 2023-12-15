@@ -11,3 +11,12 @@
         </div>
     </section>
 </div>
+<script>
+    let contentsData = {{ contentData|json_encode|raw }}
+        let m_img_list = [];
+    if (contentsData.status == 'success'){
+        m_img_list = contentsData.data;
+    }else{
+        m_img_list = [];
+    }
+</script>

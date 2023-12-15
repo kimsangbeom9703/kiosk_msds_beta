@@ -9,7 +9,7 @@ let m_main_conf = {
     curr_page: -1,
 };
 
-let m_target_date = '20220823';
+let m_target_date = '20231214';
 let m_target_num = '1000';
 
 function setInit() {

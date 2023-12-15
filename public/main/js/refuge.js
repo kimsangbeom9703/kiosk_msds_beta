@@ -9,15 +9,15 @@ let m_main_conf = {
     curr_page: -1,
 };
 
-let m_img_list = [
-    {
-        url: '/main/images/test/01.png',
-    },
-];
+// let m_img_list = [
+//     {
+//         url: '/main/images/test/01.png',
+//     },
+// ];
 
 function setInit() {
     console.log(m_main_conf.name, 'setInit');
-    $('#id_img').attr('src', m_img_list[0].url);
+    $('#id_img').attr('src', m_img_list[0].file_path);
 }
 
 function setMainLang(_lang) {}

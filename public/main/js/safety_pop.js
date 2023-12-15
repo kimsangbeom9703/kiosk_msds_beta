@@ -1,13 +1,13 @@
 let m_main_conf = {
-    lang: 'KOR',
-    name: 'safety_pop',
-    curr_cnt: 0,
-    curr_screen: 1,
+    lang        : 'KOR',
+    name        : 'safety_pop',
+    curr_cnt    : 0,
+    curr_screen : 1,
     screen_ptime: 0,
-    screen_last: 0,
-    style_cnt: 0,
-    curr_page: -1,
-    shift: false,
+    screen_last : 0,
+    style_cnt   : 0,
+    curr_page   : -1,
+    shift       : false,
 };
 
 let galleryTop;
@@ -18,59 +18,64 @@ let contentsList;
 let charlist = [];
 let text = '';
 let text_input = null;
-
-let m_often_result_list = [
+let m_search_result_list;
+let m_often_result_list;
+const fetchData = async (mainIdx, subIdx) => {
+    let apiData = await getApiData(mainIdx, subIdx);
+    return apiData.data
+};
+/*let m_often_result_list = [
     {
-        title: '#자주 찾는 물질 1',
-        desc: '',
-        type: 'pdf',
-        fileUrl: '/main/commonfiles/pdfs/temp1.pdf',
+        title   : '#자주 찾는 물질 1',
+        desc    : '',
+        type    : 'pdf',
+        fileUrl : '/main/commonfiles/pdfs/temp1.pdf',
         thumnail: '/main/images/test/img_picture.png',
     },
     {
-        title: '#자주 찾는 물질 2',
-        desc: '',
-        type: 'pdf',
-        fileUrl: '/main/commonfiles/pdfs/temp2.pdf',
+        title   : '#자주 찾는 물질 2',
+        desc    : '',
+        type    : 'pdf',
+        fileUrl : '/main/commonfiles/pdfs/temp2.pdf',
         thumnail: '/main/images/test/img_picture.png',
     },
     {
-        title: '#자주 찾는 물질 3',
-        desc: '',
-        type: 'pdf',
-        fileUrl: '/main/commonfiles/pdfs/temp3.pdf',
+        title   : '#자주 찾는 물질 3',
+        desc    : '',
+        type    : 'pdf',
+        fileUrl : '/main/commonfiles/pdfs/temp3.pdf',
         thumnail: '/main/images/test/img_picture.png',
     },
     {
-        title: '#자주 찾는 물질 4',
-        desc: '',
-        type: 'pdf',
-        fileUrl: '/main/commonfiles/pdfs/temp4.pdf',
+        title   : '#자주 찾는 물질 4',
+        desc    : '',
+        type    : 'pdf',
+        fileUrl : '/main/commonfiles/pdfs/temp4.pdf',
         thumnail: '/main/images/test/img_picture.png',
     },
     {
-        title: '#자주 찾는 물질 5',
-        desc: '',
-        type: 'pdf',
-        fileUrl: '/main/commonfiles/pdfs/temp5.pdf',
+        title   : '#자주 찾는 물질 5',
+        desc    : '',
+        type    : 'pdf',
+        fileUrl : '/main/commonfiles/pdfs/temp5.pdf',
         thumnail: '/main/images/test/img_picture.png',
     },
     {
-        title: '#자주 찾는 물질 6',
-        desc: '',
-        type: 'pdf',
-        fileUrl: '/main/commonfiles/pdfs/temp6.pdf',
+        title   : '#자주 찾는 물질 6',
+        desc    : '',
+        type    : 'pdf',
+        fileUrl : '/main/commonfiles/pdfs/temp6.pdf',
         thumnail: '/main/images/test/img_picture.png',
     },
     {
-        title: '#자주 찾는 물질 7',
-        desc: '',
-        type: 'pdf',
-        fileUrl: '/main/commonfiles/pdfs/temp7.pdf',
+        title   : '#자주 찾는 물질 7',
+        desc    : '',
+        type    : 'pdf',
+        fileUrl : '/main/commonfiles/pdfs/temp7.pdf',
         thumnail: '/main/images/test/img_picture.png',
     },
-];
-let m_search_result_list = [
+];*/
+/*let m_search_result_list = [
     {
         title: '과산화수소',
         desc: '물(H₂O)에 산소 원자가 하나 더 붙어서 만들어진 무기화합물이다',
@@ -232,68 +237,68 @@ let m_search_result_list = [
         fileUrl: '/main/commonfiles/pdfs/temp3.pdf',
         thumnail: '/main/images/test/img_picture.png',
     },
-];
+];*/
 
 let m_search_contents_list = [
     {
-        title: '동영상 제목 노출동영상 제목 노출',
-        type: 'mov',
+        title   : '동영상 제목 노출동영상 제목 노출',
+        type    : 'mov',
         thumnail: '/main/images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/mov01.mp4',
+        fileUrl : '/main/commonfiles/mov01.mp4',
     },
     {
-        title: '동영상 제목 노출동영상 제목 노출',
-        type: 'mov',
+        title   : '동영상 제목 노출동영상 제목 노출',
+        type    : 'mov',
         thumnail: '/main//images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/mov01.mp4',
+        fileUrl : '/main/commonfiles/mov01.mp4',
     },
     {
-        title: '동영상 제목 노출동영상 제목 노출',
-        type: 'mov',
+        title   : '동영상 제목 노출동영상 제목 노출',
+        type    : 'mov',
         thumnail: '/main//images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/mov01.mp4',
+        fileUrl : '/main/commonfiles/mov01.mp4',
     },
     {
-        title: '이미지 이미지 이미지',
-        type: 'img',
+        title   : '이미지 이미지 이미지',
+        type    : 'img',
         thumnail: '/main/images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/img10.jpg',
+        fileUrl : '/main/commonfiles/img10.jpg',
     },
     {
-        title: '이미지 이미지 이미지',
-        type: 'img',
+        title   : '이미지 이미지 이미지',
+        type    : 'img',
         thumnail: '/main/images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/img10.jpg',
+        fileUrl : '/main/commonfiles/img10.jpg',
     },
     {
-        title: '이미지 이미지 이미지',
-        type: 'img',
+        title   : '이미지 이미지 이미지',
+        type    : 'img',
         thumnail: '/main/images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/img10.jpg',
+        fileUrl : '/main/commonfiles/img10.jpg',
     },
     {
-        title: '이미지 이미지 이미지',
-        type: 'img',
+        title   : '이미지 이미지 이미지',
+        type    : 'img',
         thumnail: '/main/images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/img10.jpg',
+        fileUrl : '/main/commonfiles/img10.jpg',
     },
     {
-        title: '동영상 제목 노출동영상 제목 노출',
-        type: 'mov',
+        title   : '동영상 제목 노출동영상 제목 노출',
+        type    : 'mov',
         thumnail: '/main//images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/mov01.mp4',
+        fileUrl : '/main/commonfiles/mov01.mp4',
     },
     {
-        title: '동영상 제목 노출동영상 제목 노출',
-        type: 'mov',
+        title   : '동영상 제목 노출동영상 제목 노출',
+        type    : 'mov',
         thumnail: '/main//images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/mov01.mp4',
+        fileUrl : '/main/commonfiles/mov01.mp4',
     },
     {
-        title: '동영상 제목 노출동영상 제목 노출',
-        type: 'mov',
+        title   : '동영상 제목 노출동영상 제목 노출',
+        type    : 'mov',
         thumnail: '/main//images/test/img_picture.png',
-        fileUrl: '/main/commonfiles/mov01.mp4',
+        fileUrl : '/main/commonfiles/mov01.mp4',
     },
 ];
 
@@ -303,17 +308,17 @@ function setInit() {
 
     searchBox0 = new Swiper('.search_box_0', {
         spaceBetween: 100, //슬라이드 간격
-        pagination: {
-            el: '.swiper-pagination',
+        pagination  : {
+            el       : '.swiper-pagination',
             clickable: true,
         },
-        navigation: {},
-        on: {
+        navigation  : {},
+        on          : {
             slideChange: function () {
                 //var currentPage = searchBox0.realIndex + 1; // 현재 페이지 번호 계산
                 //setPagenation(currentPage);
             },
-            init: function () {
+            init       : function () {
                 //setPagenation(1);
                 //galleryTop.slideTo(2);
             },
@@ -322,17 +327,17 @@ function setInit() {
 
     searchResult = new Swiper('.search_result', {
         spaceBetween: 100, //슬라이드 간격
-        pagination: {
-            el: '.swiper-pagination',
+        pagination  : {
+            el       : '.swiper-pagination',
             clickable: true,
         },
-        navigation: {},
-        on: {
+        navigation  : {},
+        on          : {
             slideChange: function () {
                 //var currentPage = searchBox0.realIndex + 1; // 현재 페이지 번호 계산
                 //setPagenation(currentPage);
             },
-            init: function () {
+            init       : function () {
                 //setPagenation(1);
                 //galleryTop.slideTo(2);
             },
@@ -341,14 +346,16 @@ function setInit() {
 
     contentsList = new Swiper('.picture-list', {
         spaceBetween: 100, //슬라이드 간격
-        pagination: {
-            el: '.swiper-pagination',
+        pagination  : {
+            el       : '.swiper-pagination',
             clickable: true,
         },
-        navigation: {},
-        on: {
-            slideChange: function () {},
-            init: function () {},
+        navigation  : {},
+        on          : {
+            slideChange: function () {
+            },
+            init       : function () {
+            },
         },
     });
 
@@ -400,8 +407,8 @@ function setSearchKeyword() {
 
     if (t_keyword == '') {
         Swal.fire({
-            icon: 'error',
-            title: '검색어를 입력해주세요.',
+            icon       : 'error',
+            title      : '검색어를 입력해주세요.',
             customClass: {
                 popup: 'alert',
             },
@@ -488,7 +495,8 @@ function setContentsList() {
     contentsList.slideTo(0); // 첫 번째 슬라이드로 이동
 }
 
-function setMainLang(_lang) {}
+function setMainLang(_lang) {
+}
 
 function setMainStart() {
     m_main_conf.curr_page = -1;
@@ -526,7 +534,30 @@ function setBtnBack() {
     }
 }
 
-function setSearchBox0() {
+const getApiData = async (mainIdx, subIdx) => {
+    try {
+        const response = await fetch(`https://beta.msds.svr.kr/api/newcontentdata`, {
+            method: 'POST',
+            body  : JSON.stringify({
+                'mainIdx': `${mainIdx}`,
+                'subIdx' : `${subIdx}`,
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data)
+        return data
+    } catch (error) {
+        console.error('에러 발생:', error);
+    }
+};
+
+const setSearchBox0 = async () => {
+    m_search_result_list = await fetchData(2, 2);
+    console.log(m_search_result_list.length)
     $('#id_search_box_0_wrapper').html('');
     let t_html = '';
     let r_html = '';
@@ -546,7 +577,7 @@ function setSearchBox0() {
         r_html += ' <a>';
         r_html += "     <div class='inner'>";
         r_html += "         <div class='img'>";
-        r_html += "             <img src='" + m_search_result_list[i].thumnail + "'>";
+        r_html += "             <img src='/main/images/test/img_picture.png'>";
         r_html += '         </div>';
         r_html += "         <div class='txt'>";
         r_html +=
@@ -563,12 +594,12 @@ function setSearchBox0() {
         $('#id_search_0_wrap_' + t_id).append(r_html);
     }
 }
-
-function setOftenList() {
+const setOftenList = async () => {
+    m_search_result_list = await fetchData(2, 3);
     $('#id_con_daga_list_2_container').html('');
     let t_html = '';
 
-    for (let i = 0; i < m_often_result_list.length; i += 1) {
+    for (let i = 0; i < m_search_result_list.length; i += 1) {
         if (i < 6) {
             //console.log(i);
             t_html = '<li>';
@@ -578,7 +609,7 @@ function setOftenList() {
                 i +
                 ");'>";
             t_html += "         <div class='img'>";
-            t_html += "             <img src='" + m_often_result_list[i].thumnail + "'>";
+            t_html += "             <img src='/main/images/test/img_picture.png'>";
             t_html += '         </div>';
             t_html += "         <div class='txt'>";
             t_html +=

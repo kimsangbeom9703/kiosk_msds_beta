@@ -1,0 +1,183 @@
+.container {
+    background-color: #102758;
+}
+
+.img_zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_zone .img {}
+
+
+.img_zone .img img {
+    width: 2160px;
+}
+
+
+.top_area {}
+
+.middle_area {
+    width: 2160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle_area .img_bg {
+    z-index: 0;
+}
+
+.middle_area .img_bg img {
+    width: 2160px;
+}
+
+.middle_area .txt_s {
+    z-index: 1;
+    position: absolute;
+    font-size: 130px;
+    letter-spacing: 32px;
+}
+
+.middle_area .yy_0 {
+    top: 600px;
+    left: 695px;
+}
+
+.middle_area .mm_0 {
+    top: 600px;
+    left: 1235px;
+}
+
+.middle_area .dd_0 {
+    top: 600px;
+    left: 1570px;
+}
+
+.middle_area .yy_1 {
+    top: 755px;
+    left: 695px;
+    color: #FF4400;
+}
+
+.middle_area .mm_1 {
+    top: 755px;
+    left: 1235px;
+    color: #FF4400;
+}
+
+.middle_area .dd_1 {
+    top: 755px;
+    left: 1570px;
+    color: #FF4400;
+}
+
+.middle_area .txt_b {
+    z-index: 1;
+    position: absolute;
+    font-size: 190px;
+    letter-spacing: 48px;
+}
+
+.middle_area .num_0 {
+    top: 950px;
+    left: 1310px;
+    color: #FF4400;
+}
+
+.middle_area .num_1 {
+    top: 1160px;
+    left: 1310px;
+}
+
+
+
+
+
+
+
+/* 무재해 현황 */
+.situation {
+    width: 1700px;
+    background: linear-gradient(to bottom, #44474f 0%, #1e2126 100%);
+    margin: 0 auto;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.3);
+    padding: 170px 130px;
+    box-sizing: border-box;
+}
+
+.situation li {
+    margin-bottom: 128px;
+}
+
+.situation li:last-child {
+    margin-bottom: 0;
+}
+
+.situation li .list_item_dl {
+    display: flex;
+    align-items: center;
+}
+
+.situation li .list_item_dt {
+    font-size: 120px;
+    color: #fff;
+    margin-right: 85px;
+    font-weight: 500;
+}
+
+.situation li .list_item_dd {
+    font-size: 120px;
+    color: #a1adc6;
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+}
+
+.situation li .item_dd_box {
+    background-color: #32353e;
+    box-shadow: inset 0 -5px 20px 0 rgba(255, 255, 255, 0.2), inset 0 10px 10px 0 rgba(0, 0, 0, 0.5), 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-family: 'Pretendard';
+}
+
+.box1 {
+    width: 800px;
+    height: 200px;
+    color: #1aeb61;
+    font-size: 180px;
+    line-height: 1;
+    margin-right: 50px;
+    justify-content: flex-end;
+}
+
+.box2 {
+    width: 1010px;
+    height: 200px;
+    color: #1aeb61;
+    font-size: 180px;
+    line-height: 1;
+    font-size: 150px;
+    justify-content: center;
+}
+
+.box3 {
+    width: 280px;
+    height: 200px;
+    color: #1aeb61;
+    font-size: 180px;
+    line-height: 1;
+    font-size: 160px;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.box3:last-child {
+    margin-left: 50px;
+}

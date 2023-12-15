@@ -208,6 +208,7 @@ class Api extends AdminBaseController
                 'file_type'     => $fileChecker['mimeType'],
                 'file_path'     => $fileChecker['uploadPath'],
                 'file_number'   => 1,
+                'file_duration' => $fileChecker['file_duration'],
             ];
             $this->Common->FilesModel->save($fileInsertArray);
             
@@ -271,6 +272,7 @@ class Api extends AdminBaseController
                     'file_type'     => $fileChecker['mimeType'],
                     'file_path'     => $fileChecker['uploadPath'],
                     'file_number'   => 1,
+                    'file_duration' => $fileChecker['file_duration'],
                 ];
                 $this->Common->FilesModel->save($fileInsertArray);
                 $this->Common->ContentsModel->save($postData);
@@ -368,6 +370,7 @@ class Api extends AdminBaseController
             return $this->view($body, lang('Admin.menu-Main'), $categoryMainData['url'], $categorySubData['url']);
         }
     }
+    
     /**
      * Notice
      **/

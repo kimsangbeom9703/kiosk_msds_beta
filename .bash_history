@@ -102,3 +102,26 @@ yum install ffmpeg
 sudo yum install ffmpeg
 su
 exit
+ls
+ll
+pwd
+echo esc(\CodeIgniter\CodeIgniter::CI_VERSION);
+php -v
+nginx -v
+node -v
+echo CI_VERSION;
+su webmaster
+ls
+ll
+cd ..
+ls
+ll
+cd incheon-airport-manager/
+ls
+ll
+cd msds-manager-beta/
+ls
+ll
+ls
+ll
+su

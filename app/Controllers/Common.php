@@ -69,7 +69,7 @@ class Common
         ];
     }
     
-    public function getContentsAllList(int $mainIdx, int $subIdx , int $limit = 10)
+    public function getContentsAllList(int $mainIdx, int $subIdx, int $limit = 10)
     {
         if (empty($subIdx)) {
             $wheres = [
@@ -103,13 +103,13 @@ class Common
         $returnData = ['data' => $resultData, 'pager' => $pager, 'drop_sort' => $this->dataSorting($sortData)];
         return $returnData;
     }
-    public function getNotFilesContentsAllList(int $mainIdx,int $limit = 10)
+    
+    public function getNotFilesContentsAllList(int $mainIdx, int $limit = 10)
     {
         $wheres = [
             'k_contents.main_category_id' => $mainIdx,
         ];
         
-
         
         $resultData = $this->ContentsModel->
         select('k_contents.*')->
@@ -139,5 +139,44 @@ class Common
         $guid = random_string('md5', 36);
         return $guid;
     }
+    
+    public function contentsData(int $mainIdx, int $subIdx)
+    {
+        if (empty($mainIdx) || empty($subIdx)) {
+            return ['status' => 'fail', 'error_str' => 'not_params'];
+        }
+        
+        $resultData = $this->db->query(
+            "SELECT
+                    `k_contents`.`title`,
+                    `k_contents`.`desc`,
+                    `k_contents`.`sort`,
+                    `k_files`.`org_file_name`,
+                    `k_files`.`file_path`,
+                    `k_files`.`file_type`,
+                    `k_files`.`file_duration`,
+                    `k_files`.`file_ext`
+                FROM
+                    `k_contents`
+                        JOIN
+                    `k_files` ON `k_contents`.`id` = `k_files`.`content_id`
+                WHERE
+                    `k_contents`.`main_category_id` = " . $mainIdx . "
+                        AND `k_contents`.`sub_category_id` = " . $subIdx . "
+                        AND `k_files`.`file_number` = '1'
+                        AND `k_contents`.`deleted_at` IS NULL
+                        AND `k_files`.`deleted_at` IS NULL
+                        AND `k_contents`.`deleted_at` IS NULL
+                ORDER BY `k_contents`.`used` ASC , `k_contents`.`sort` ASC , `k_contents`.`id` DESC"
+        )->getResultArray();
+        
+        if (empty($resultData)) {
+            $returnData = ['status' => 'fail', 'error_str' => 'not_data'];
+        } else {
+            $returnData = ['status' => 'success', 'data' => $resultData];
+        }
+        return $returnData;
+    }
+    
     
 }

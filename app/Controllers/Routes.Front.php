@@ -8,7 +8,8 @@ $routes->setAutoRoute(false);
 $routes->setDefaultNamespace('App\Controllers\Home');
 $routes->get ('/','Home::index');
 
-$routes->get ('/(:segment)','sub\Sub::index/$1');
+//$routes->get ('/refuge','sub\Sub::refuge');
+//$routes->get ('/(:segment)','sub\Sub::index/$1');
 
 
 ?>

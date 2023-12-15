@@ -46,7 +46,7 @@ class FileService
                     'ext'            => $fileExt,
                     'mimeType'       => $mimeType,
                     'size'           => $fileSize,
-                    //                    'file_duration'  => $this->fileDuration($fileUploadPath)
+                    'file_duration'  => strpos($mimeType, 'video') !== false ? $this->fileDuration($fileUploadPath) : 10,
                 ];
                 return $returnArray;
             } else {
@@ -73,10 +73,13 @@ class FileService
         $duration = null;
         
         foreach ($streams as $stream) {
+            var_dump($stream->get('codec_type'));
             // 비디오 스트림인 경우 (codec_type이 'video'인 경우) 재생시간(duration) 추출
             if ($stream->get('codec_type') === 'video') {
                 $duration = $stream->get('duration');
                 break; // 첫 번째 비디오 스트림에서 재생시간을 찾으면 루프 종료
+            } else {
+                $duration = 10;
             }
         }
         return $duration;

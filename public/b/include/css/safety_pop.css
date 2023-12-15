@@ -1,0 +1,390 @@
+[class^='icon-'],
+[class*=' icon-'] {
+    display: inline-block;
+    font-family: 'Material Icons' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    font-size: 24px;
+}
+
+.blur_exceptTitle {
+    top: 300px;
+}
+/* navigation */
+.wrap_thumb_layout .swiper-button-next,
+.wrap_thumb_layout .swiper-button-prev {
+    top: 75%;
+}
+
+.wrap_thumb_layout .swiper-button-prev,
+.wrap_thumb_layout .swiper-rtl .swiper-button-next {
+    left: -40px;
+}
+
+.wrap_thumb_layout .swiper-button-next,
+.wrap_thumb_layout .swiper-rtl .swiper-button-prev {
+    right: -40px;
+}
+
+/* pagination */
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: -35px;
+}
+
+.swiper-pagination-bullet {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(136, 95, 95, 0.2);
+    margin: 0 25px !important;
+}
+
+.swiper-pagination-bullet-active {
+    color: #fff;
+    background: #007aff;
+}
+
+.top_area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_area .search_area {
+    width: 800px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ff0000;
+}
+
+.top_area .search_area .text_area input {
+    width: 750px;
+    height: 30px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.top_area .search_area .btn_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_box_0 {
+    position: absolute;
+    height: 2400px;
+}
+
+.sub {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2160px;
+}
+
+.search_box_1 .search {
+    z-index: 210;
+}
+
+/* 키보드 */
+.keyboard_area {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 200;
+    width: 2160px;
+    height: 2980px;
+}
+
+.keyboard_area .keyboard_bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 180;
+    width: 2160px;
+    height: 2980px;
+    background: #000000cc;
+}
+
+.keyboard {
+    position: relative;
+    top: 300px;
+    left: 270px;
+    z-index: 190;
+    width: 1620px;
+    border-radius: 30px;
+    background: #0b193f;
+    box-sizing: border-box;
+    padding: 50px 50px 70px;
+}
+
+.btn_list {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.btn_key_real {
+    width: 130px;
+    height: 130px;
+    float: left;
+    background: #1a2f5a;
+    color: #fff;
+    line-height: 130px;
+    text-align: center;
+    margin-left: 20px;
+    border-radius: 15px;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.btn_list:first-child {
+    padding-top: 20px;
+}
+
+.key__shift-left {
+    width: 202px;
+}
+
+.key__convert {
+    width: 300px;
+    color: #4064a7;
+    font-size: 50px;
+}
+
+.key__delete {
+    width: 202px;
+}
+
+.key__enter {
+    width: 300px;
+    color: #4064a7;
+    font-size: 50px;
+}
+
+.key__spacebar {
+    width: 705px;
+}
+
+.key__mL90 {
+    margin-left: 90px;
+}
+
+.key__mL150 {
+    margin-left: 150px;
+}
+
+.icon-spacebar {
+    font-size: 60px;
+    color: #4064a7;
+}
+
+.icon-shift {
+    font-size: 60px;
+    color: #4064a7;
+    font-weight: bold;
+}
+
+.btn_key_real:active {
+    background: #484c58;
+}
+
+.btn_key_real.active {
+    background: #484c58;
+}
+
+.search-result-page {
+    position: absolute;
+    z-index: 210;
+    top: 520px;
+    left: 80px;
+    width: 2000px;
+    height: 2000px;
+}
+
+.swal2-popup {
+    font-size: 2.5rem !important;
+}
+
+.list_typeB li {
+    width: 620px;
+}
+
+.list_typeB li a {
+    position: relative;
+    padding: 150px 110px 0;
+    width: 580px;
+    height: 650px;
+}
+.list_typeB li .inner .img {
+    overflow: hidden; /* 초과하는 부분 숨김 */
+    position: relative; /* 이미지의 위치 설정 */
+    width: 200px;
+    height: 200px;
+}
+
+.list_typeB li .inner .txt {
+    width: 400px;
+    padding: 50px 0 0 0;
+    word-wrap: break-word; /* IE 및 최신 브라우저에 적용 */
+    overflow-wrap: break-word; /* 최신 브라우저에 적용 */
+    overflow: hidden; /* 초과하는 부분 숨김 */
+}
+.list_typeB li .inner .img img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute; /* 이미지의 위치 설정 */
+    top: 50%; /* 부모 요소의 중앙으로 이동하기 위한 값 */
+    left: 50%; /* 부모 요소의 중앙으로 이동하기 위한 값 */
+    transform: translate(-50%, -50%); /* 이미지를 가운데 정렬 */
+    max-width: 100%; /* 이미지가 원본 크기보다 클 경우 최대 너비 설정 */
+    max-height: 100%; /* 이미지가 원본 크기보다 클 경우 최대 높이 설정 */
+}
+
+.list_typeE li {
+    width: 620px;
+}
+
+.list_typeE li a {
+    position: relative;
+    padding: 150px 110px 0;
+    width: 580px;
+    height: 650px;
+}
+.list_typeE li .inner .img {
+    overflow: hidden; /* 초과하는 부분 숨김 */
+    position: relative; /* 이미지의 위치 설정 */
+    width: 200px;
+    height: 200px;
+}
+
+.list_typeE li .inner .txt {
+    width: 400px;
+    padding: 50px 0 0 0;
+}
+.list_typeE li .inner .img img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute; /* 이미지의 위치 설정 */
+    top: 50%; /* 부모 요소의 중앙으로 이동하기 위한 값 */
+    left: 50%; /* 부모 요소의 중앙으로 이동하기 위한 값 */
+    transform: translate(-50%, -50%); /* 이미지를 가운데 정렬 */
+    max-width: 100%; /* 이미지가 원본 크기보다 클 경우 최대 너비 설정 */
+    max-height: 100%; /* 이미지가 원본 크기보다 클 경우 최대 높이 설정 */
+}
+
+.con_data_list_2 li .inner .txt {
+    width: 400px;
+}
+.con_data_list_2 li .inner .img {
+    overflow: hidden; /* 초과하는 부분 숨김 */
+    position: relative; /* 이미지의 위치 설정 */
+}
+.con_data_list_2 li .inner .img img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute; /* 이미지의 위치 설정 */
+    top: 50%; /* 부모 요소의 중앙으로 이동하기 위한 값 */
+    left: 50%; /* 부모 요소의 중앙으로 이동하기 위한 값 */
+    transform: translate(-50%, -50%); /* 이미지를 가운데 정렬 */
+    max-width: 100%; /* 이미지가 원본 크기보다 클 경우 최대 너비 설정 */
+    max-height: 100%; /* 이미지가 원본 크기보다 클 경우 최대 높이 설정 */
+}
+
+/* 영상 list */
+
+.picture-list {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2160px;
+    height: 2500px;
+}
+
+.list_typeD li a span img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute; /* 이미지의 위치 설정 */
+    top: 50%; /* 부모 요소의 중앙으로 이동하기 위한 값 */
+    left: 50%; /* 부모 요소의 중앙으로 이동하기 위한 값 */
+    transform: translate(-50%, -50%); /* 이미지를 가운데 정렬 */
+    max-width: 100%; /* 이미지가 원본 크기보다 클 경우 최대 너비 설정 */
+    max-height: 100%; /* 이미지가 원본 크기보다 클 경우 최대 높이 설정 */
+    z-index: 0;
+}
+
+.list_typeD li a span .ico_play {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+    background-image: url(/b/images/common/ico_play.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 250px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.titleBar {
+    position: relative;
+    z-index: 210;
+}
+/* 검색 */
+.titleBar input[type='text'] {
+    position: relative;
+    padding-left: 160px;
+    width: 1850px;
+    height: 100%;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 60px;
+    font-family: notosans;
+    background: url(/b/images/common/ico_search.png) no-repeat left center / 150px auto;
+    z-index: 190;
+}
+.titleBar input[type='text']::placeholder {
+    color: #fff;
+    opacity: 0.6;
+}
+.titleBar .btn_close {
+    z-index: 191;
+    position: absolute;
+    top: 0px;
+    right: 150px;
+}
+.titleBar .btn_close img {
+    width: 108px;
+    height: 108px;
+}
+
+.info {
+    width: 1600px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

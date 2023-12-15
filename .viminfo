@@ -10,13 +10,26 @@
 
 # hlsearch on (H) or off (h):
 ~H
+# Last Substitute String:
+$
+
 # Command Line History (newest to oldest):
+:q
+|2,0,1702615434,,"q"
+:q!
+|2,0,1702614491,,"q!"
+:Q
+|2,0,1702614488,,"Q"
+:'<,'>Q
+|2,0,1702614485,,"'<,'>Q"
+:w
+|2,0,1702614469,,"w"
 :wq
 |2,0,1698121739,,"wq"
-:w
-|2,0,1698121739,,"w"
 
 # Search String History (newest to oldest):
+? @$
+|2,1,1702614506,,"@$"
 
 # Expression History (newest to oldest):
 
@@ -25,26 +38,95 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-""-	CHAR	0
+""0	CHAR	0
+	$ContentData['main_category_id'],
+|3,1,0,0,1,0,1702614531,"$ContentData['main_category_id'],"
+"-	CHAR	0
 	#
-|3,1,36,0,1,0,1698121737,"#"
+|3,0,36,0,1,0,1702614467,"#"
 
 # File marks:
-'0  17  0  ~/.env
-|4,48,17,0,1698121739,"~/.env"
+'0  154  52  ~/app/Controllers/Admin/Api.php
+|4,48,154,52,1702615434,"~/app/Controllers/Admin/Api.php"
+'1  1  0  ~/app/Common.php
+|4,49,1,0,1702614496,"~/app/Common.php"
+'2  17  0  ~/.env
+|4,50,17,0,1702614491,"~/.env"
+'3  17  0  ~/.env
+|4,51,17,0,1698121739,"~/.env"
 
 # Jumplist (newest first):
+-'  154  52  ~/app/Controllers/Admin/Api.php
+|4,39,154,52,1702615434,"~/app/Controllers/Admin/Api.php"
+-'  68  5  ~/app/Controllers/Admin/Api.php
+|4,39,68,5,1702614535,"~/app/Controllers/Admin/Api.php"
+-'  11  0  ~/app/Controllers
+|4,39,11,0,1702614505,"~/app/Controllers"
+-'  11  0  ~/app
+|4,39,11,0,1702614503,"~/app"
+-'  8  0  ~/app/Database
+|4,39,8,0,1702614502,"~/app/Database"
+-'  1  0  ~/app/Database
+|4,39,1,0,1702614500,"~/app/Database"
+-'  34  0  ~/app
+|4,39,34,0,1702614499,"~/app"
+-'  1  0  ~/app/Common.php
+|4,39,1,0,1702614496,"~/app/Common.php"
+-'  1  0  ~/app/Common.php
+|4,39,1,0,1702614496,"~/app/Common.php"
+-'  1  0  ~/app
+|4,39,1,0,1702614494,"~/app"
+-'  17  0  ~/.env
+|4,39,17,0,1702614491,"~/.env"
+-'  17  0  ~/.env
+|4,39,17,0,1702614491,"~/.env"
+-'  17  0  ~/.env
+|4,39,17,0,1702614491,"~/.env"
+-'  17  0  ~/.env
+|4,39,17,0,1702614491,"~/.env"
 -'  17  0  ~/.env
 |4,39,17,0,1698121739,"~/.env"
+-'  17  0  ~/.env
+|4,39,17,0,1698121739,"~/.env"
+-'  17  0  ~/.env
+|4,39,17,0,1698121739,"~/.env"
+-'  17  0  ~/.env
+|4,39,17,0,1698121739,"~/.env"
+-'  1  0  ~/.env
+|4,39,1,0,1698121733,"~/.env"
+-'  1  0  ~/.env
+|4,39,1,0,1698121733,"~/.env"
+-'  1  0  ~/.env
+|4,39,1,0,1698121733,"~/.env"
+-'  1  0  ~/.env
+|4,39,1,0,1698121733,"~/.env"
+-'  1  0  ~/.env
+|4,39,1,0,1698121733,"~/.env"
+-'  1  0  ~/.env
+|4,39,1,0,1698121733,"~/.env"
+-'  1  0  ~/.env
+|4,39,1,0,1698121733,"~/.env"
 -'  1  0  ~/.env
 |4,39,1,0,1698121733,"~/.env"
 
 # History of marks within files (newest to oldest):
 
+> ~/app/Controllers/Admin/Api.php
+	*	1702615434	0
+	"	154	52
+	.	68	0
+	+	68	0
+
+> ~/app/Common.php
+	*	1702614495	0
+	"	1	0
+
 > ~/.env
-	*	1698121739	0
+	*	1702614489	0
 	"	17	0
 	^	18	1
 	.	17	0
+	+	18	0
+	+	17	0
 	+	18	0
 	+	17	0

@@ -1,0 +1,281 @@
+<div id="Wrap">
+    <header>
+        <div class="logo">
+            <img src="/a/images/common/logo.png" />
+        </div>
+    </header>
+
+    <div class="main-title-wrap">
+        <h2 class="title">
+            <span>00화학 제조1공정</span>
+            안전보건정보 키오스크
+        </h2>
+    </div>
+
+    <div id="id_btn_back" class="btn_back" style="display: none">
+        <a><img src="/a/images/common/bnt_back.png" /></a>
+    </div>
+    <!-- VISUAL -->
+    <section>
+        <div class="screen_main">
+            <div id="id_main_screen_0" class="screen_list_main" style="display: n1one">
+                <div class="list_area">
+                    <!-- NOTICE START //-->
+                    <div id="id_page_notice_list" class="notice_main">
+                        <div id="id_notice_box_01" class="notice_box" style="display: none">
+                            <img src="" />
+                            <video muted>
+                                <source src="" />
+                            </video>
+                        </div>
+                        <div id="id_notice_box_02" class="notice_box" style="display: none">
+                            <img src="" />
+                            <video muted>
+                                <source src="" />
+                            </video>
+                        </div>
+                    </div>
+                    <!-- NOTICE END //-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  버튼  -->
+    <div class="main-btn-wrap">
+        <div class="main--btn"><a>안전 보건 정보 확인하기</a> <i class="material-icons">touch_app</i></div>
+    </div>
+
+    <!-- CONTENTS START //-->
+    <div class="sub_page_main" style="display: none">
+        <div id="id_main_frame_refuge" class="frame_info" style="display: none">
+            <iframe allowtransparency="true" name="frame_refuge" src="/a_type/refuge"></iframe>
+        </div>
+        <div id="id_main_frame_call" class="frame_info" style="display: none">
+            <iframe allowTransparency="true" name="frame_call" src="/a_type/call"></iframe>
+        </div>
+        <div id="id_main_frame_no_accident" class="frame_info" style="display: none">
+            <iframe allowTransparency="true" name="frame_no_accident" src="/a_type/no_accident"></iframe>
+        </div>
+        <div id="id_main_frame_safety_pop" class="frame_info" style="display: none">
+            <iframe allowTransparency="true" name="frame_safety_pop" src="/a_type/safety_pop"></iframe>
+        </div>
+    </div>
+
+    <nav>
+        <ul class="main-gnb">
+            <li class="gnb-btn" code="0">
+                <span class="icon-gnb"><img src="/a/images/main/main_gnb01.png" /></span>
+                <p class="tit lang_code_names" lang_code="GNB_0">피난 안내도</p>
+            </li>
+            <li class="gnb-btn" code="1">
+                <span class="icon-gnb"><img src="/a/images/main/main_gnb02.png" /></span>
+                <p class="tit lang_code_names" lang_code="GNB_1">비상전화<br /><span>(작업중지요청)</span></p>
+            </li>
+            <li class="gnb-btn" code="2">
+                <span class="icon-gnb"><img src="/a/images/main/main_gnb03.png" /></span>
+                <p class="tit lang_code_names" lang_code="GNB_2">사업장<br />무재해 현황</p>
+            </li>
+            <li class="gnb-btn" code="3">
+                <span class="icon-gnb"><img src="/a/images/main/main_gnb04.png" /></span>
+                <p class="tit lang_code_names" lang_code="GNB_3">언어</p>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 정보  -->
+    <section id="id_today" class="today">
+        <div class="l-col">
+            <div class="weather">
+                <div class="weather--info">
+                    <span class="ico_wm"><img id="id_weather_img" src="/a/images/weather/DB01_B.svg" /></span>
+                    <span class="info_temper">
+                                <span id="id_tmp">-</span><span class="celsius">℃</span>
+                                <div class="txt_desc"><span id="id_tmn">-℃</span> / <span id="id_tmx">-℃</span></div>
+                                <div id="id_reh" class="humidity">-%</div>
+                            </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="l-col">
+            <div class="date">
+                <p id="id_date_zone" class="date--txt">2023.10.15</p>
+                <p id="id_time_zone" class="date--time"><span>PM</span>05:09</p>
+            </div>
+        </div>
+
+        <div class="l-col">
+            <div class="dust">
+                <dl>
+                    <dt>미세먼지</dt>
+                    <dd><span id="id_lv2" class="lv2">보통</span></dd>
+                    <dt>초미세먼지</dt>
+                    <dd><span id="id_lv1" class="lv1">좋음</span></dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- 뉴스  -->
+
+    <div id="id_ticker_area" class="ticker_area">
+        <div id="id_ticker_box" class="ticker_box">
+            <ul id="id_ticker_box_ul"></ul>
+        </div>
+    </div>
+
+    <nav id="id_gnb_1" class="gnb_bottom_menu" style="display: none">
+        <ul class="gnb">
+            <li id="id_gnb_btn_1_0" class="gnb-btn-1" code="0">
+                <a>
+                            <span class="icon-gnb">
+                                <img src="/a/images/common/gnb_01.png" />
+                                <img src="/a/images/common/gnb_01_on.png" />
+                            </span>
+                    <p class="lang_code_names" lang_code="GNB_0">피난 안내도</p>
+                </a>
+            </li>
+            <li id="id_gnb_btn_1_1" class="gnb-btn-1" code="1">
+                <a>
+                            <span class="icon-gnb">
+                                <img src="/a/images/common/gnb_02.png" />
+                                <img src="/a/images/common/gnb_02_on.png" />
+                            </span>
+                    <p class="lang_code_names" lang_code="GNB_1">비상전화<br /><span>(작업중지요청)</span></p>
+                </a>
+            </li>
+            <li id="id_gnb_btn_1_2" class="gnb-btn-1" code="2">
+                <a>
+                            <span class="icon-gnb">
+                                <img src="/a/images/common/gnb_03.png" />
+                                <img src="/a/images/common/gnb_03_on.png" />
+                            </span>
+                    <p class="lang_code_names" lang_code="GNB_2">사업장<br />무재해 현황</p>
+                </a>
+            </li>
+            <li id="id_gnb_btn_1_3" class="gnb-btn-1" code="3">
+                <a>
+                            <span class="icon-gnb">
+                                <img src="/a/images/common/gnb_04.png" />
+                                <img src="/a/images/common/gnb_04_on.png" />
+                            </span>
+                    <p class="lang_code_names" lang_code="GNB_3">언어</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div id="id_pop_lang" class="popup_lang" style="display: none">
+    <div id="id_pop_lang_box_4" class="pop_lang_box_4 wow animate__bounceIn" data-wow-duration="0.5s">
+        <div class="btn_lang" code="KOR">
+            <div class="bg"></div>
+            <div class="icon"><img src="/a/images/lang/icon_kor.svg" /></div>
+            <div class="txt">KOR</div>
+        </div>
+
+        <div class="btn_lang" code="ENG">
+            <div class="bg"></div>
+            <div class="icon"><img src="/a/images/lang/icon_eng.svg" /></div>
+            <div class="txt">ENG</div>
+        </div>
+        <div class="btn_lang" code="CHN">
+            <div class="bg"></div>
+            <div class="icon"><img src="/a/images/lang/icon_chn.svg" /></div>
+            <div class="txt">CHN</div>
+        </div>
+        <div class="btn_lang" code="JPN">
+            <div class="bg"></div>
+            <div class="icon"><img src="/a/images/lang/icon_jpn.svg" /></div>
+            <div class="txt">JPN</div>
+        </div>
+
+        <div class="bg_zone">
+            <img src="/a/images/lang/lang_bg.svg" />
+        </div>
+    </div>
+</div>
+
+<div id="id_pop_lang_main" class="popup_lang_main" style="display: none">
+    <div id="id_pop_lang_main_box_4" class="pop_lang_main_box_4 wow animate__bounceIn" data-wow-duration="0.5s">
+        <div class="btn_lang" code="KOR">
+            <div class="bg"></div>
+            <div class="icon"><img src="/a/images/lang/icon_kor.svg" /></div>
+            <div class="txt">KOR</div>
+        </div>
+        <div class="btn_lang" code="ENG">
+            <div class="bg"></div>
+            <div class="icon"><img src="/a/images/lang/icon_eng.svg" /></div>
+            <div class="txt">ENG</div>
+        </div>
+        <div class="btn_lang" code="CHN">
+            <div class="bg"></div>
+            <div class="icon"><img src="/a/images/lang/icon_chn.svg" /></div>
+            <div class="txt">CHN</div>
+        </div>
+        <div class="btn_lang" code="JPN">
+            <div class="bg"></div>
+            <div class="icon"><img src="/a/images/lang/icon_jpn.svg" /></div>
+            <div class="txt">JPN</div>
+        </div>
+
+        <div class="bg_zone">
+            <img src="/a/images/lang/lang_bg.svg" />
+        </div>
+    </div>
+</div>
+<div id="id_pop_pdf" class="pop_pdf" style="display: none">
+    <div class="pdf_area">
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="id_pdf_container"></div>
+            <!-- <div id="id_pagination" class="swiper-pagination"></div> -->
+        </div>
+    </div>
+    <div id="id_btn_prev" class="swiper-button-prev"></div>
+    <div id="id_btn_next" class="swiper-button-next"></div>
+    <div class="pdf_bg"></div>
+    <div class="btn_pop_close"></div>
+</div>
+<div id="id_pop_video" class="pop_video" style="display: none">
+    <div class="video_wrap">
+        <div class="video_box">
+            <h3 id="id_video_tit" class="tit"></h3>
+            <div id="id_pop_video_area" class="video_area">
+                <video>
+                    <source src="" />
+                </video>
+            </div>
+            <p class="btn_close">
+                <a><img src="/a/images/common/btn_close.png" /></a>
+            </p>
+        </div>
+    </div>
+    <div class="btn_pop_close"></div>
+</div>
+<div id="id_pop_img" class="pop_img" style="display: none">
+    <div id="id_pop_img_area" class="img_area">
+        <img src="" />
+        <!-- <div class="swiper-container">
+            <div class="swiper-wrapper" id="id_img_container"></div>
+            <div id="id_pagination" class="swiper-pagination"></div>
+            <div id="id_btn_prev" class="swiper-button-prev"></div>
+            <div id="id_btn_next" class="swiper-button-next"></div>
+        </div> -->
+    </div>
+    <div class="pop_img_bg">
+        <p class="btn_close">
+            <a><img src="/a/images/common/btn_close01.png" /></a>
+        </p>
+    </div>
+    <div class="btn_pop_close"></div>
+</div>
+<script>
+    let contentsData = {{ contentData|json_encode|raw }}
+    let m_notice_list = [];
+    if (contentsData.status == 'success'){
+        m_notice_list = contentsData.data;
+    }else{
+        m_notice_list = [];
+    }
+</script>

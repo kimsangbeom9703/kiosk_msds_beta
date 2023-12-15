@@ -12,8 +12,6 @@ class Home extends HomeBaseController
     
     public function index()
     {
-//        echo esc(\CodeIgniter\CodeIgniter::CI_VERSION);
-        $body = $this->render('main');
-        return $this->view($body);
+        return $this->render('newMain');
     }
 }

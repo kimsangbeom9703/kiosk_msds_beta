@@ -1,0 +1,269 @@
+<div class="wrap">
+    <div class="blur">
+        <div class="langBox popupBox">
+            <div class="title">
+                언어변환
+                <button class="btn_close"></button>
+            </div>
+            <div class="radio">
+                <input type="radio" name="lang" id="kr" checked /><label for="kr">한국어</label>
+                <input type="radio" name="lang" id="en" /><label for="en">English</label>
+                <input type="radio" name="lang" id="ch" /><label for="ch">中文</label>
+                <button class="btn_apply">적용하기</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quick_menu">
+        <button id="langBtn"></button>
+        <ul class="lang_list" id="langList">
+            <li id="kr2" class="active">
+                <button>한국어</button>
+            </li>
+            <li id="en2">
+                <button>English</button>
+            </li>
+            <li id="ch2">
+                <button>中文</button>
+            </li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="bg"></div>
+        <div class="inner">
+            <span><i></i></span>
+            <h1 id="id_h1">안전보건정보 키오스크</h1>
+            <h2 id="id_h2">00화학 제조1공정</h2>
+            <h3 id="id_h3">공정명</h3>
+            <h4 id="id_h4">안전보건 정보 확인하기</h4>
+            <div class="logo">
+                <img src="/b/images/common/logo.png" alt="" />
+            </div>
+
+            <div class="header_button">
+                <a id="id_btn_back" class="btn_back"></a>
+                <a id="id_link_home" class="link_home"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- VISUAL -->
+    <section>
+        <div class="screen_main">
+            <div id="id_main_screen_0" class="screen_list_main" style="display: n1one">
+                <div class="list_area">
+                    <!-- NOTICE START //-->
+                    <div id="id_page_notice_list" class="notice_main">
+                        <div id="id_notice_box_01" class="notice_box" style="display: none">
+                            <img src="" />
+                            <video muted>
+                                <source src="" />
+                            </video>
+                        </div>
+                        <div id="id_notice_box_02" class="notice_box" style="display: none">
+                            <img src="" />
+                            <video muted>
+                                <source src="" />
+                            </video>
+                        </div>
+                    </div>
+                    <!-- NOTICE END //-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main">
+        <section>
+            <!--  버튼  -->
+            <div class="group_link">
+                <div class="link_left main-btn-wrap">
+                    <a><span>안전 보건 정보 확인하기</span></a>
+                </div>
+                <div class="link_right">
+                    <div class="gnb-btn" code="0">
+                        <a class="tit lang_code_names" lang_code="GNB_0">피난 안내도</a>
+                    </div>
+                    <div class="gnb-btn" code="1">
+                        <a class="tit lang_code_names" lang_code="GNB_1">비상전화 <i>(작업중지요청)</i></a>
+                    </div>
+                    <div class="gnb-btn" code="2">
+                        <a class="tit lang_code_names" lang_code="GNB_2">사업장 무재해 현황</a>
+                    </div>
+                    <div class="gnb-btn" code="3">
+                        <button id="langBtn1" class="tit lang_code_names" lang_code="GNB_3">언어변환</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="id_ticker_area" class="notice">
+                <b>공지사항</b>
+                <div id="id_ticker_box" class="ticker_box">
+                    <ul id="id_ticker_box_ul"></ul>
+                </div>
+            </div>
+
+            <div class="etc">
+                <div class="etc_left">
+                    <i id="id_date_zone">2022. 10. 15</i>
+                    <span id="id_time_zone">
+                                <b>05:09</b>
+                                <em>PM</em>
+                            </span>
+                </div>
+                <div class="etc_center">
+                    <b id="id_tmp">-4˚</b>
+                    <p id="id_sky">조금흐림</p>
+                    <div class="ico_wm"><img id="id_weather_img" src="/b/images/weather/DB01_B.svg" /></div>
+                </div>
+                <div class="etc_right">
+                    <ul>
+                        <li>
+                            <i>습도</i>
+                            <em id="id_reh">65%</em>
+                        </li>
+                        <li>
+                            <i>미세먼지</i>
+                            <em id="id_lv2">보통</em>
+                        </li>
+                        <li>
+                            <i>초미세먼지</i>
+                            <em id="id_lv1">좋음</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 뉴스  -->
+    </main>
+
+    <!-- CONTENTS START //-->
+    <div class="sub_page_main" style="display: none">
+        <div id="id_main_frame_refuge" class="frame_info" style="display: none">
+            <iframe allowtransparency="true" name="frame_refuge" src="/b_type/refuge"></iframe>
+        </div>
+        <div id="id_main_frame_call" class="frame_info" style="display: none">
+            <iframe allowTransparency="true" name="frame_call" src="/b_type/call"></iframe>
+        </div>
+        <div id="id_main_frame_no_accident" class="frame_info" style="display: none">
+            <iframe allowTransparency="true" name="frame_no_accident" src="/b_type/no_accident"></iframe>
+        </div>
+        <div id="id_main_frame_safety_pop" class="frame_info" style="display: none">
+            <iframe allowTransparency="true" name="frame_safety_pop" src="/b_type/safety_pop"></iframe>
+        </div>
+    </div>
+
+    <nav id="id_gnb_1" class="gnb_bottom_menu" style="display: none">
+        <nav>
+            <ul class="gnb">
+                <li id="id_gnb_btn_1_0" class="gnb-btn-1" code="4">
+                    <a>
+                        <span class="icon-gnb"> </span>
+                        <p class="lang_code_names" lang_code="GNB_BOTTOM_4">피난 안내도</p>
+                    </a>
+                </li>
+                <li id="id_gnb_btn_1_1" class="gnb-btn-1" code="0">
+                    <a>
+                        <span class="icon-gnb"> </span>
+                        <p class="lang_code_names" lang_code="GNB_BOTTOM_0">
+                            비상전화<br /><span>(작업중지요청)</span>
+                        </p>
+                    </a>
+                </li>
+                <li id="id_gnb_btn_1_2" class="gnb-btn-1" code="1">
+                    <a>
+                        <span class="icon-gnb"> </span>
+                        <p class="lang_code_names" lang_code="GNB_BOTTOM_1">사업장<br />무재해 현황</p>
+                    </a>
+                </li>
+                <li id="id_gnb_btn_1_3" class="gnb-btn-1" code="2">
+                    <a>
+                        <span class="icon-gnb"> </span>
+                        <p class="lang_code_names" lang_code="GNB_BOTTOM_2">언어</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </nav>
+</div>
+
+<div id="id_pop_lang" class="popup_lang" style="display: none">
+    <div id="id_pop_lang_box_4" class="pop_lang_box_4 wow animate__bounceIn" data-wow-duration="0.5s">
+        <div class="btn_lang" code="KOR">
+            <div class="bg"></div>
+            <div class="icon"><img src="/b/images/lang/icon_kor.svg" /></div>
+            <div class="txt">KOR</div>
+        </div>
+
+        <div class="btn_lang" code="ENG">
+            <div class="bg"></div>
+            <div class="icon"><img src="/b/images/lang/icon_eng.svg" /></div>
+            <div class="txt">ENG</div>
+        </div>
+        <div class="btn_lang" code="CHN">
+            <div class="bg"></div>
+            <div class="icon"><img src="/b/images/lang/icon_chn.svg" /></div>
+            <div class="txt">CHN</div>
+        </div>
+        <div class="btn_lang" code="JPN">
+            <div class="bg"></div>
+            <div class="icon"><img src="/b/images/lang/icon_jpn.svg" /></div>
+            <div class="txt">JPN</div>
+        </div>
+
+        <div class="bg_zone">
+            <img src="/b/images/lang/lang_bg.svg" />
+        </div>
+    </div>
+</div>
+
+<div id="id_pop_pdf" class="pop_pdf" style="display: none">
+    <div class="titleBar">
+        <p id="id_pdf_title">MICROFAB® CU MSA 100 R</p>
+        <i id="id_pdf_num">[ 1 / 5 ]</i>
+    </div>
+    <div class="pdf_area">
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="id_pdf_container"></div>
+            <!-- <div id="id_pagination" class="swiper-pagination"></div> -->
+        </div>
+    </div>
+    <div id="id_btn_prev" class="swiper-button-prev"></div>
+    <div id="id_btn_next" class="swiper-button-next"></div>
+    <!--            <div class="pdf_bg"></div>-->
+</div>
+<div id="id_pop_video" class="pop_video" style="display: none">
+    <div class="video_wrap">
+        <div class="video_box videoBox">
+            <div id="id_video_tit" class="title"></div>
+            <button class="btn_close"></button>
+            <div id="id_pop_video_area" class="video_area video">
+                <video>
+                    <source src="" />
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_close"></div>
+</div>
+<div id="id_pop_img" class="pop_img" style="display: none">
+    <div class="image_box">
+        <div id="id_image_tit" class="title"></div>
+        <button class="btn_close"></button>
+        <div id="id_pop_img_area" class="img_area">
+            <img src="" />
+        </div>
+    </div>
+    <div class="btn_pop_close"></div>
+</div>
+<script>
+    let contentsData = {{ contentData|json_encode|raw }}
+        let m_notice_list = [];
+    if (contentsData.status == 'success'){
+        m_notice_list = contentsData.data;
+    }else{
+        m_notice_list = [];
+    }
+</script>

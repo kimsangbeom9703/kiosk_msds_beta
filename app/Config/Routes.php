@@ -60,6 +60,16 @@ if (is_file(APPPATH . 'Controllers/Routes.Admin.php')) {
 if (is_file(APPPATH . 'Controllers/Routes.Front.php')) {
     require APPPATH . 'Controllers/Routes.Front.php';
 }
+if (is_file(APPPATH . 'Controllers/Routes.A.php')) {
+    require APPPATH . 'Controllers/Routes.A.php';
+}
+if (is_file(APPPATH . 'Controllers/Routes.B.php')) {
+    require APPPATH . 'Controllers/Routes.B.php';
+}
+
+//if (is_file(APPPATH . 'Controllers/Routes.Front.php')) {
+//    require APPPATH . 'Controllers/Routes.Front.php';
+//}
 
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

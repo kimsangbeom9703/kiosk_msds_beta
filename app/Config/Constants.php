@@ -112,3 +112,15 @@ define('API_URL_PREFIX','api/');
 
 define('CATEGORY_DEVICE_CODE','device01');
 define('CATEGORY_VIDEO_CODE','videos01');
+
+define('A_VIEW_MAIN_PATH','page/a/index');
+define('A_VIEW_PATH','page/a/');
+
+define('A_VIEW_MAIN_SUB_INDEX_PATH','page/a/sub/sub_index');
+define('A_VIEW_MAIN_SUB_PATH','page/a/sub/');
+
+define('B_VIEW_MAIN_PATH','page/b/index');
+define('B_VIEW_PATH','page/b/');
+
+define('B_VIEW_MAIN_SUB_INDEX_PATH','page/b/sub/sub_index');
+define('B_VIEW_MAIN_SUB_PATH','page/b/sub/');
